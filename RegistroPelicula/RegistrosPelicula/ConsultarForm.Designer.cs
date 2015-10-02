@@ -41,12 +41,12 @@
             this.ResultadodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultadodataGridView.Location = new System.Drawing.Point(12, 12);
             this.ResultadodataGridView.Name = "ResultadodataGridView";
-            this.ResultadodataGridView.Size = new System.Drawing.Size(610, 334);
+            this.ResultadodataGridView.Size = new System.Drawing.Size(743, 407);
             this.ResultadodataGridView.TabIndex = 0;
             // 
             // Mostrarbutton
             // 
-            this.Mostrarbutton.Location = new System.Drawing.Point(279, 352);
+            this.Mostrarbutton.Location = new System.Drawing.Point(651, 425);
             this.Mostrarbutton.Name = "Mostrarbutton";
             this.Mostrarbutton.Size = new System.Drawing.Size(75, 23);
             this.Mostrarbutton.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 379);
+            this.ClientSize = new System.Drawing.Size(767, 452);
             this.Controls.Add(this.Mostrarbutton);
             this.Controls.Add(this.ResultadodataGridView);
             this.Name = "ConsultarForm";

@@ -21,23 +21,26 @@ namespace RegistroPelicula.RegistrosPelicula
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Peliculas peliculaC = new Peliculas();
-            
+            try
+            { 
+                peliculaC.Titulo = TitulotextBox.Text;
 
-            peliculaC.Titulo = TitulotextBox.Text;
+                peliculaC.Descripcion = DescripciontextBox.Text;
 
-            peliculaC.Descripcion = DescripciontextBox.Text;
+                peliculaC.Ano = Convert.ToInt32(AnotextBox.Text);
 
-            peliculaC.Ano = Convert.ToInt32(AnotextBox.Text);
+                peliculaC.Calificacion = Convert.ToInt32(CalificaciontextBox.Text);
 
-            peliculaC.Calificacion = Convert.ToInt32(CalificaciontextBox.Text);
+                peliculaC.IMDB = Convert.ToInt32(IMDBtextBox.Text);
 
-            peliculaC.IMDB = Convert.ToInt32(IMDBtextBox.Text);
+                peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
 
-            peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
-
-            peliculaC.Insertar();
-
-            MessageBox.Show("se guardo correctamente");
+                peliculaC.Insertar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             TitulotextBox.Clear();
             DescripciontextBox.Clear();
