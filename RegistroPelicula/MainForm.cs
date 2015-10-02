@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RegistroPelicula.RegistrosPelicula;
 
 namespace RegistroPelicula
 {
@@ -19,7 +20,16 @@ namespace RegistroPelicula
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AgregarForm agre = new AgregarForm();
 
+            agre.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarForm consul = new ConsultarForm();
+
+            consul.Show();
         }
     }
 }
