@@ -49,6 +49,7 @@
             // 
             this.PeliculaIdtextBox.Location = new System.Drawing.Point(60, 58);
             this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
+            this.PeliculaIdtextBox.ReadOnly = true;
             this.PeliculaIdtextBox.Size = new System.Drawing.Size(139, 20);
             this.PeliculaIdtextBox.TabIndex = 0;
             // 

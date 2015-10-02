@@ -21,8 +21,7 @@ namespace RegistroPelicula.RegistrosPelicula
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Peliculas peliculaC = new Peliculas();
-
-            PeliculaIdtextBox.Text = Convert.ToString(peliculaC.PeliculaId);
+            
 
             peliculaC.Titulo = TitulotextBox.Text;
 
@@ -37,6 +36,15 @@ namespace RegistroPelicula.RegistrosPelicula
             peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
 
             peliculaC.Insertar();
+
+            MessageBox.Show("se guardo correctamente");
+
+            TitulotextBox.Clear();
+            DescripciontextBox.Clear();
+            AnotextBox.Clear();
+            CalificaciontextBox.Clear();
+            IMDBtextBox.Clear();
+            CategoriaIdtextBox.Clear();
         }
     }
 }
