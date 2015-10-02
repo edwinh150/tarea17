@@ -81,6 +81,9 @@
     <EmbeddedResource Include="RegistrosPelicula\AgregarForm.resx">
       <DependentUpon>AgregarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistrosPelicula\ConsultarForm.resx">
+      <DependentUpon>ConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
