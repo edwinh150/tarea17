@@ -7,6 +7,7 @@ using DAL;
 
 namespace BLL
 {
+    // Capa de negocio ya creada
     public class Peliculas
     {
         public int PeliculaId { get; set; }
