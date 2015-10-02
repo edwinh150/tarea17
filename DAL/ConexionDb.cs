@@ -16,7 +16,7 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection("Data Source=(local);Initial Catalog=Aplicada1Db;Integrated Security=True");
+            con = new SqlConnection("Data Source=EDWINH150\\SQLEXPRESS; Initial Catalog=Peliculas; Integrated Security=True");
             Cmd = new SqlCommand();
         }
 
@@ -68,8 +68,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw ex;
-                //MessageBox.Show(ex.Message);
+                throw ex;            
             }
             finally
             {
