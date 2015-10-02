@@ -30,14 +30,14 @@
         {
             this.PeliculaIdtextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.TitulotextBox = new System.Windows.Forms.TextBox();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
             this.AnotextBox = new System.Windows.Forms.TextBox();
             this.CalificaciontextBox = new System.Windows.Forms.TextBox();
             this.IMDBtextBox = new System.Windows.Forms.TextBox();
             this.CategoriaIdtextBox = new System.Windows.Forms.TextBox();
             this.PIlabel = new System.Windows.Forms.Label();
-            this.Nlabel = new System.Windows.Forms.Label();
+            this.Tlabel = new System.Windows.Forms.Label();
             this.Delabel = new System.Windows.Forms.Label();
             this.Alabel = new System.Windows.Forms.Label();
             this.Calabel = new System.Windows.Forms.Label();
@@ -60,13 +60,14 @@
             this.Guardarbutton.TabIndex = 1;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // NombretextBox
+            // TitulotextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(60, 104);
-            this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(139, 20);
-            this.NombretextBox.TabIndex = 0;
+            this.TitulotextBox.Location = new System.Drawing.Point(60, 104);
+            this.TitulotextBox.Name = "TitulotextBox";
+            this.TitulotextBox.Size = new System.Drawing.Size(139, 20);
+            this.TitulotextBox.TabIndex = 0;
             // 
             // DescripciontextBox
             // 
@@ -112,14 +113,14 @@
             this.PIlabel.TabIndex = 2;
             this.PIlabel.Text = "Pelicula Id";
             // 
-            // Nlabel
+            // Tlabel
             // 
-            this.Nlabel.AutoSize = true;
-            this.Nlabel.Location = new System.Drawing.Point(57, 88);
-            this.Nlabel.Name = "Nlabel";
-            this.Nlabel.Size = new System.Drawing.Size(44, 13);
-            this.Nlabel.TabIndex = 2;
-            this.Nlabel.Text = "Nombre";
+            this.Tlabel.AutoSize = true;
+            this.Tlabel.Location = new System.Drawing.Point(57, 88);
+            this.Tlabel.Name = "Tlabel";
+            this.Tlabel.Size = new System.Drawing.Size(33, 13);
+            this.Tlabel.TabIndex = 2;
+            this.Tlabel.Text = "Titulo";
             // 
             // Delabel
             // 
@@ -176,7 +177,7 @@
             this.Controls.Add(this.Calabel);
             this.Controls.Add(this.Alabel);
             this.Controls.Add(this.Delabel);
-            this.Controls.Add(this.Nlabel);
+            this.Controls.Add(this.Tlabel);
             this.Controls.Add(this.PIlabel);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.CategoriaIdtextBox);
@@ -184,7 +185,7 @@
             this.Controls.Add(this.CalificaciontextBox);
             this.Controls.Add(this.AnotextBox);
             this.Controls.Add(this.DescripciontextBox);
-            this.Controls.Add(this.NombretextBox);
+            this.Controls.Add(this.TitulotextBox);
             this.Controls.Add(this.PeliculaIdtextBox);
             this.Name = "AgregarForm";
             this.Text = "Agregar Peliculas";
@@ -197,14 +198,14 @@
 
         private System.Windows.Forms.TextBox PeliculaIdtextBox;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.TextBox NombretextBox;
+        private System.Windows.Forms.TextBox TitulotextBox;
         private System.Windows.Forms.TextBox DescripciontextBox;
         private System.Windows.Forms.TextBox AnotextBox;
         private System.Windows.Forms.TextBox CalificaciontextBox;
         private System.Windows.Forms.TextBox IMDBtextBox;
         private System.Windows.Forms.TextBox CategoriaIdtextBox;
         private System.Windows.Forms.Label PIlabel;
-        private System.Windows.Forms.Label Nlabel;
+        private System.Windows.Forms.Label Tlabel;
         private System.Windows.Forms.Label Delabel;
         private System.Windows.Forms.Label Alabel;
         private System.Windows.Forms.Label Calabel;
