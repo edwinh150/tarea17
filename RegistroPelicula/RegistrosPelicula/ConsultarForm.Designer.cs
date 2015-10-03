@@ -38,6 +38,7 @@
             this.ResultadodataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResultadodataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.ResultadodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultadodataGridView.Location = new System.Drawing.Point(12, 12);
             this.ResultadodataGridView.Name = "ResultadodataGridView";
@@ -46,9 +47,10 @@
             // 
             // Mostrarbutton
             // 
+            this.Mostrarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mostrarbutton.Location = new System.Drawing.Point(651, 425);
             this.Mostrarbutton.Name = "Mostrarbutton";
-            this.Mostrarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Mostrarbutton.Size = new System.Drawing.Size(104, 23);
             this.Mostrarbutton.TabIndex = 1;
             this.Mostrarbutton.Text = "Mostrar";
             this.Mostrarbutton.UseVisualStyleBackColor = true;
@@ -58,6 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RegistroPelicula.Properties.Resources.Ver_Peliculas_Completas_Online_Gratis;
             this.ClientSize = new System.Drawing.Size(767, 452);
             this.Controls.Add(this.Mostrarbutton);
             this.Controls.Add(this.ResultadodataGridView);
