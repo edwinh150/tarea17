@@ -72,5 +72,17 @@ namespace BLLS
 
                 return retorno;
             }
+
+            public bool Eliminar()
+            {
+                bool retorno = false;
+
+                ConexionDb conexion = new ConexionDb();
+
+
+                conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
+
+                return retorno;
+            }
     }
 }
