@@ -56,6 +56,7 @@
             this.PeliculaIdtextBox.ReadOnly = true;
             this.PeliculaIdtextBox.Size = new System.Drawing.Size(79, 20);
             this.PeliculaIdtextBox.TabIndex = 0;
+            this.PeliculaIdtextBox.TextChanged += new System.EventHandler(this.PeliculaIdtextBox_TextChanged);
             // 
             // Guardarbutton
             // 
@@ -76,6 +77,7 @@
             this.TitulotextBox.Name = "TitulotextBox";
             this.TitulotextBox.Size = new System.Drawing.Size(168, 20);
             this.TitulotextBox.TabIndex = 0;
+            this.TitulotextBox.TextChanged += new System.EventHandler(this.TitulotextBox_TextChanged);
             // 
             // DescripciontextBox
             // 
@@ -83,6 +85,7 @@
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(168, 20);
             this.DescripciontextBox.TabIndex = 0;
+            this.DescripciontextBox.TextChanged += new System.EventHandler(this.DescripciontextBox_TextChanged);
             // 
             // AnotextBox
             // 
@@ -90,6 +93,7 @@
             this.AnotextBox.Name = "AnotextBox";
             this.AnotextBox.Size = new System.Drawing.Size(133, 20);
             this.AnotextBox.TabIndex = 0;
+            this.AnotextBox.TextChanged += new System.EventHandler(this.AnotextBox_TextChanged);
             // 
             // CalificaciontextBox
             // 
@@ -111,6 +115,7 @@
             this.CategoriaIdtextBox.Name = "CategoriaIdtextBox";
             this.CategoriaIdtextBox.Size = new System.Drawing.Size(133, 20);
             this.CategoriaIdtextBox.TabIndex = 0;
+            this.CategoriaIdtextBox.TextChanged += new System.EventHandler(this.CategoriaIdtextBox_TextChanged);
             // 
             // PIlabel
             // 
@@ -122,6 +127,7 @@
             this.PIlabel.Size = new System.Drawing.Size(75, 15);
             this.PIlabel.TabIndex = 2;
             this.PIlabel.Text = "Pelicula Id";
+            this.PIlabel.Click += new System.EventHandler(this.PIlabel_Click);
             // 
             // Tlabel
             // 
@@ -133,6 +139,7 @@
             this.Tlabel.Size = new System.Drawing.Size(43, 15);
             this.Tlabel.TabIndex = 2;
             this.Tlabel.Text = "Titulo";
+            this.Tlabel.Click += new System.EventHandler(this.Tlabel_Click);
             // 
             // Delabel
             // 
@@ -144,6 +151,7 @@
             this.Delabel.Size = new System.Drawing.Size(83, 15);
             this.Delabel.TabIndex = 2;
             this.Delabel.Text = "Descripcion";
+            this.Delabel.Click += new System.EventHandler(this.Delabel_Click);
             // 
             // Alabel
             // 
@@ -155,6 +163,7 @@
             this.Alabel.Size = new System.Drawing.Size(31, 15);
             this.Alabel.TabIndex = 2;
             this.Alabel.Text = "Ano";
+            this.Alabel.Click += new System.EventHandler(this.Alabel_Click);
             // 
             // Calabel
             // 
@@ -176,6 +185,7 @@
             this.CIlabel.Size = new System.Drawing.Size(87, 15);
             this.CIlabel.TabIndex = 2;
             this.CIlabel.Text = "Categoria ID";
+            this.CIlabel.Click += new System.EventHandler(this.CIlabel_Click);
             // 
             // Imlabel
             // 
@@ -200,6 +210,7 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puntuacion";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1
             // 
@@ -212,6 +223,7 @@
             this.label1.Size = new System.Drawing.Size(241, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ingrese los datos de la pelicula";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // limpiarbutton
             // 
