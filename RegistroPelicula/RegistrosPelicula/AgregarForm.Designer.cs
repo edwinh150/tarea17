@@ -45,6 +45,7 @@
             this.Imlabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.limpiarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(293, 242);
+            this.Guardarbutton.Location = new System.Drawing.Point(235, 253);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(96, 39);
             this.Guardarbutton.TabIndex = 1;
@@ -212,6 +213,19 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Ingrese los datos de la pelicula";
             // 
+            // limpiarbutton
+            // 
+            this.limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
+            this.limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.limpiarbutton.Location = new System.Drawing.Point(352, 253);
+            this.limpiarbutton.Name = "limpiarbutton";
+            this.limpiarbutton.Size = new System.Drawing.Size(96, 39);
+            this.limpiarbutton.TabIndex = 5;
+            this.limpiarbutton.Text = "Limpiar";
+            this.limpiarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.limpiarbutton.UseVisualStyleBackColor = true;
+            this.limpiarbutton.Click += new System.EventHandler(this.limpiarbutton_Click);
+            // 
             // AgregarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +235,7 @@
             this.BackgroundImage = global::RegistroPelicula.Properties.Resources.tira_de_pelicula_antigua_antiga_pixmac_imagen_85285258;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(479, 387);
+            this.Controls.Add(this.limpiarbutton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CIlabel);
@@ -263,5 +278,6 @@
         private System.Windows.Forms.Label Imlabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button limpiarbutton;
     }
 }

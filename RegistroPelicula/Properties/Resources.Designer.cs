@@ -63,6 +63,16 @@ namespace RegistroPelicula.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1442211594_edit_clear {
+            get {
+                object obj = ResourceManager.GetObject("1442211594_edit-clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1442212393_Save {
             get {
                 object obj = ResourceManager.GetObject("1442212393_Save", resourceCulture);

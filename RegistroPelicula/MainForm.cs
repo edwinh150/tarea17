@@ -21,15 +21,20 @@ namespace RegistroPelicula
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgregarForm agre = new AgregarForm();
-
+            agre.MdiParent = this;
             agre.Show();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarForm consul = new ConsultarForm();
-
+            consul.MdiParent = this;
             consul.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

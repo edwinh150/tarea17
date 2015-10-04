@@ -36,12 +36,22 @@ namespace RegistroPelicula.RegistrosPelicula
                 peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
 
                 peliculaC.Insertar();
+
+                TitulotextBox.Clear();
+                DescripciontextBox.Clear();
+                AnotextBox.Clear();
+                CalificaciontextBox.Clear();
+                IMDBtextBox.Clear();
+                CategoriaIdtextBox.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
 
+        private void limpiarbutton_Click(object sender, EventArgs e)
+        {
             TitulotextBox.Clear();
             DescripciontextBox.Clear();
             AnotextBox.Clear();
