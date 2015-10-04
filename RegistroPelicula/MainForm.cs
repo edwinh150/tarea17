@@ -36,5 +36,12 @@ namespace RegistroPelicula
         {
 
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarForm mod = new ModificarForm();
+            mod.MdiParent = this;
+            mod.Show();
+        }
     }
 }

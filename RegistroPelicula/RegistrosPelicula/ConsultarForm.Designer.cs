@@ -77,9 +77,9 @@
             // ConsultarcomboBox
             // 
             this.ConsultarcomboBox.FormattingEnabled = true;
-            this.ConsultarcomboBox.Location = new System.Drawing.Point(46, 14);
+            this.ConsultarcomboBox.Location = new System.Drawing.Point(18, 14);
             this.ConsultarcomboBox.Name = "ConsultarcomboBox";
-            this.ConsultarcomboBox.Size = new System.Drawing.Size(133, 21);
+            this.ConsultarcomboBox.Size = new System.Drawing.Size(137, 21);
             this.ConsultarcomboBox.TabIndex = 2;
             // 
             // Consultarbutton
@@ -93,9 +93,9 @@
             // 
             // ConsultartextBox
             // 
-            this.ConsultartextBox.Location = new System.Drawing.Point(202, 14);
+            this.ConsultartextBox.Location = new System.Drawing.Point(170, 14);
             this.ConsultartextBox.Name = "ConsultartextBox";
-            this.ConsultartextBox.Size = new System.Drawing.Size(352, 20);
+            this.ConsultartextBox.Size = new System.Drawing.Size(384, 20);
             this.ConsultartextBox.TabIndex = 0;
             // 
             // ConsultarForm

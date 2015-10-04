@@ -10,6 +10,8 @@ namespace BLL
     // Capa de negocio ya creada
     public class Peliculas
     {
+        public int Peliculaid { get; set; }
+
         public string Titulo { get; set; }
 
         public string Descripcion { get; set; }
@@ -42,16 +44,33 @@ namespace BLL
             this.CategoriaId = CategoriaIdS;
         }
 
+        public Peliculas(int peliculaid)
+        {
+            this.Peliculaid = peliculaid;
+        }
+
         public bool Insertar()
         {
             bool retorno = false;
 
             ConexionDb conexion = new ConexionDb();
 
+
             conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId) Values('{0}','{1}','{2}','{3}','{4}','{5}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this. CategoriaId));
 
             return retorno;
+        }
 
+        public bool Modificar()
+        {
+            bool retorno = false;
+
+            ConexionDb conexion = new ConexionDb();
+
+
+            conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' Descripcion = '{1}' Ano = '{2}' Calificacion = '{3}' IMDB = '{4}' CategoriaId = '{5}' where  PeliculaId = '{6}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Peliculaid));
+
+            return retorno;
         }
     }
 }

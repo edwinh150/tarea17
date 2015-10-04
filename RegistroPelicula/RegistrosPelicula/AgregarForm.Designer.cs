@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PeliculaIdtextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.TitulotextBox = new System.Windows.Forms.TextBox();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
@@ -36,7 +35,6 @@
             this.CalificaciontextBox = new System.Windows.Forms.TextBox();
             this.IMDBtextBox = new System.Windows.Forms.TextBox();
             this.CategoriaIdtextBox = new System.Windows.Forms.TextBox();
-            this.PIlabel = new System.Windows.Forms.Label();
             this.Tlabel = new System.Windows.Forms.Label();
             this.Delabel = new System.Windows.Forms.Label();
             this.Alabel = new System.Windows.Forms.Label();
@@ -48,14 +46,6 @@
             this.limpiarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // PeliculaIdtextBox
-            // 
-            this.PeliculaIdtextBox.Location = new System.Drawing.Point(140, 69);
-            this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
-            this.PeliculaIdtextBox.ReadOnly = true;
-            this.PeliculaIdtextBox.Size = new System.Drawing.Size(79, 20);
-            this.PeliculaIdtextBox.TabIndex = 0;
             // 
             // Guardarbutton
             // 
@@ -72,21 +62,21 @@
             // 
             // TitulotextBox
             // 
-            this.TitulotextBox.Location = new System.Drawing.Point(51, 114);
+            this.TitulotextBox.Location = new System.Drawing.Point(48, 96);
             this.TitulotextBox.Name = "TitulotextBox";
             this.TitulotextBox.Size = new System.Drawing.Size(168, 20);
             this.TitulotextBox.TabIndex = 0;
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(51, 169);
+            this.DescripciontextBox.Location = new System.Drawing.Point(48, 151);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(168, 20);
             this.DescripciontextBox.TabIndex = 0;
             // 
             // AnotextBox
             // 
-            this.AnotextBox.Location = new System.Drawing.Point(51, 217);
+            this.AnotextBox.Location = new System.Drawing.Point(48, 199);
             this.AnotextBox.Name = "AnotextBox";
             this.AnotextBox.Size = new System.Drawing.Size(133, 20);
             this.AnotextBox.TabIndex = 0;
@@ -107,28 +97,17 @@
             // 
             // CategoriaIdtextBox
             // 
-            this.CategoriaIdtextBox.Location = new System.Drawing.Point(51, 272);
+            this.CategoriaIdtextBox.Location = new System.Drawing.Point(48, 254);
             this.CategoriaIdtextBox.Name = "CategoriaIdtextBox";
             this.CategoriaIdtextBox.Size = new System.Drawing.Size(133, 20);
             this.CategoriaIdtextBox.TabIndex = 0;
-            // 
-            // PIlabel
-            // 
-            this.PIlabel.AutoSize = true;
-            this.PIlabel.BackColor = System.Drawing.Color.Transparent;
-            this.PIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PIlabel.Location = new System.Drawing.Point(48, 72);
-            this.PIlabel.Name = "PIlabel";
-            this.PIlabel.Size = new System.Drawing.Size(75, 15);
-            this.PIlabel.TabIndex = 2;
-            this.PIlabel.Text = "Pelicula Id";
             // 
             // Tlabel
             // 
             this.Tlabel.AutoSize = true;
             this.Tlabel.BackColor = System.Drawing.Color.Transparent;
             this.Tlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tlabel.Location = new System.Drawing.Point(48, 98);
+            this.Tlabel.Location = new System.Drawing.Point(45, 80);
             this.Tlabel.Name = "Tlabel";
             this.Tlabel.Size = new System.Drawing.Size(43, 15);
             this.Tlabel.TabIndex = 2;
@@ -139,7 +118,7 @@
             this.Delabel.AutoSize = true;
             this.Delabel.BackColor = System.Drawing.Color.Transparent;
             this.Delabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delabel.Location = new System.Drawing.Point(51, 153);
+            this.Delabel.Location = new System.Drawing.Point(48, 135);
             this.Delabel.Name = "Delabel";
             this.Delabel.Size = new System.Drawing.Size(83, 15);
             this.Delabel.TabIndex = 2;
@@ -150,7 +129,7 @@
             this.Alabel.AutoSize = true;
             this.Alabel.BackColor = System.Drawing.Color.Transparent;
             this.Alabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Alabel.Location = new System.Drawing.Point(51, 201);
+            this.Alabel.Location = new System.Drawing.Point(48, 183);
             this.Alabel.Name = "Alabel";
             this.Alabel.Size = new System.Drawing.Size(31, 15);
             this.Alabel.TabIndex = 2;
@@ -171,7 +150,7 @@
             this.CIlabel.AutoSize = true;
             this.CIlabel.BackColor = System.Drawing.Color.Transparent;
             this.CIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CIlabel.Location = new System.Drawing.Point(51, 253);
+            this.CIlabel.Location = new System.Drawing.Point(48, 235);
             this.CIlabel.Name = "CIlabel";
             this.CIlabel.Size = new System.Drawing.Size(87, 15);
             this.CIlabel.TabIndex = 2;
@@ -194,7 +173,7 @@
             this.groupBox1.Controls.Add(this.Calabel);
             this.groupBox1.Controls.Add(this.IMDBtextBox);
             this.groupBox1.Controls.Add(this.CalificaciontextBox);
-            this.groupBox1.Location = new System.Drawing.Point(255, 80);
+            this.groupBox1.Location = new System.Drawing.Point(253, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(182, 136);
             this.groupBox1.TabIndex = 3;
@@ -243,12 +222,10 @@
             this.Controls.Add(this.Alabel);
             this.Controls.Add(this.Delabel);
             this.Controls.Add(this.Tlabel);
-            this.Controls.Add(this.PIlabel);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.AnotextBox);
             this.Controls.Add(this.DescripciontextBox);
             this.Controls.Add(this.TitulotextBox);
-            this.Controls.Add(this.PeliculaIdtextBox);
             this.Name = "AgregarForm";
             this.Text = "Agregar Peliculas";
             this.TransparencyKey = System.Drawing.Color.White;
@@ -260,8 +237,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox PeliculaIdtextBox;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.TextBox TitulotextBox;
         private System.Windows.Forms.TextBox DescripciontextBox;
@@ -269,7 +244,6 @@
         private System.Windows.Forms.TextBox CalificaciontextBox;
         private System.Windows.Forms.TextBox IMDBtextBox;
         private System.Windows.Forms.TextBox CategoriaIdtextBox;
-        private System.Windows.Forms.Label PIlabel;
         private System.Windows.Forms.Label Tlabel;
         private System.Windows.Forms.Label Delabel;
         private System.Windows.Forms.Label Alabel;
