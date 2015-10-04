@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,18 @@ namespace RegistroPelicula.RegistrosPelicula
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            ConexionDb con = new ConexionDb();
+
+            try
+            {
+                //PeliculaIdtextBox.Text = con.ObtenerDatos("Select * from PeliculasT");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             Peliculas peliculaC = new Peliculas();
             try
             { 
@@ -36,6 +49,8 @@ namespace RegistroPelicula.RegistrosPelicula
                 peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
 
                 peliculaC.Insertar();
+
+                MessageBox.Show("Se guardo correctamente");
 
                 TitulotextBox.Clear();
                 DescripciontextBox.Clear();

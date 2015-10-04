@@ -66,6 +66,12 @@
     <Compile Include="RegistrosPelicula\ConsultarForm.Designer.cs">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrosPelicula\ModificarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrosPelicula\ModificarForm.Designer.cs">
+      <DependentUpon>ModificarForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrosPelicula\ConsultarForm.resx">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrosPelicula\ModificarForm.resx">
+      <DependentUpon>ModificarForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1442211594_edit-clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popcorntime1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

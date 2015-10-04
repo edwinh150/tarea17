@@ -83,6 +83,16 @@ namespace RegistroPelicula.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap popcorntime1 {
+            get {
+                object obj = ResourceManager.GetObject("popcorntime1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tira_de_pelicula_antigua_antiga_pixmac_imagen_85285258 {
             get {
                 object obj = ResourceManager.GetObject("tira-de-pelicula-antigua-antiga-pixmac-imagen-85285258", resourceCulture);
