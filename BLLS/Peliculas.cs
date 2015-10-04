@@ -68,9 +68,9 @@ namespace BLLS
                 ConexionDb conexion = new ConexionDb();
 
 
-                conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' Descripcion = '{1}' Ano = '{2}' Calificacion = '{3}' IMDB = '{4}' CategoriaId = '{5}' where  PeliculaId = '{6}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Peliculaid));
+                conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' where  PeliculaId = '{6}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Peliculaid));
 
                 return retorno;
             }
-      }
+    }
 }
