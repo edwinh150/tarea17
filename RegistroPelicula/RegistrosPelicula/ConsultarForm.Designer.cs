@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ComboBox ConsultarcomboBox;
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
             this.Mostrarbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ConsultarcomboBox = new System.Windows.Forms.ComboBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.ConsultartextBox = new System.Windows.Forms.TextBox();
+            ConsultarcomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ConsultarcomboBox);
+            this.groupBox1.Controls.Add(ConsultarcomboBox);
             this.groupBox1.Controls.Add(this.Consultarbutton);
             this.groupBox1.Controls.Add(this.ConsultartextBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
@@ -76,13 +77,13 @@
             // 
             // ConsultarcomboBox
             // 
-            this.ConsultarcomboBox.FormattingEnabled = true;
-            this.ConsultarcomboBox.Items.AddRange(new object[] {
+            ConsultarcomboBox.FormattingEnabled = true;
+            ConsultarcomboBox.Items.AddRange(new object[] {
             "PeliculasId"});
-            this.ConsultarcomboBox.Location = new System.Drawing.Point(18, 14);
-            this.ConsultarcomboBox.Name = "ConsultarcomboBox";
-            this.ConsultarcomboBox.Size = new System.Drawing.Size(137, 21);
-            this.ConsultarcomboBox.TabIndex = 2;
+            ConsultarcomboBox.Location = new System.Drawing.Point(18, 14);
+            ConsultarcomboBox.Name = "ConsultarcomboBox";
+            ConsultarcomboBox.Size = new System.Drawing.Size(137, 21);
+            ConsultarcomboBox.TabIndex = 2;
             // 
             // Consultarbutton
             // 
@@ -124,7 +125,6 @@
         private System.Windows.Forms.DataGridView ResultadodataGridView;
         private System.Windows.Forms.Button Mostrarbutton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox ConsultarcomboBox;
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.TextBox ConsultartextBox;
     }

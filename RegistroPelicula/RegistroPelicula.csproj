@@ -66,6 +66,12 @@
     <Compile Include="RegistrosPelicula\ConsultarForm.Designer.cs">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrosPelicula\EliminarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrosPelicula\EliminarForm.Designer.cs">
+      <DependentUpon>EliminarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrosPelicula\ModificarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrosPelicula\ConsultarForm.resx">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrosPelicula\EliminarForm.resx">
+      <DependentUpon>EliminarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrosPelicula\ModificarForm.resx">
       <DependentUpon>ModificarForm.cs</DependentUpon>
