@@ -60,6 +60,7 @@
             this.limpiarbutton.Text = "Limpiar";
             this.limpiarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.limpiarbutton.UseVisualStyleBackColor = true;
+            this.limpiarbutton.Click += new System.EventHandler(this.limpiarbutton_Click);
             // 
             // label1
             // 

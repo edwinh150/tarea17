@@ -47,20 +47,11 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PeliculaIdtextBox
-            // 
-            this.PeliculaIdtextBox.Location = new System.Drawing.Point(140, 69);
-            this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
-            this.PeliculaIdtextBox.ReadOnly = true;
-            this.PeliculaIdtextBox.Size = new System.Drawing.Size(79, 20);
-            this.PeliculaIdtextBox.TabIndex = 0;
-            this.PeliculaIdtextBox.TextChanged += new System.EventHandler(this.PeliculaIdtextBox_TextChanged);
-            // 
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(235, 253);
+            this.Guardarbutton.Location = new System.Drawing.Point(233, 244);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(96, 39);
             this.Guardarbutton.TabIndex = 1;
@@ -114,17 +105,6 @@
             this.CategoriaIdtextBox.Size = new System.Drawing.Size(133, 20);
             this.CategoriaIdtextBox.TabIndex = 0;
             this.CategoriaIdtextBox.TextChanged += new System.EventHandler(this.CategoriaIdtextBox_TextChanged);
-            // 
-            // PIlabel
-            // 
-            this.PIlabel.AutoSize = true;
-            this.PIlabel.BackColor = System.Drawing.Color.Transparent;
-            this.PIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PIlabel.Location = new System.Drawing.Point(48, 72);
-            this.PIlabel.Name = "PIlabel";
-            this.PIlabel.Size = new System.Drawing.Size(75, 15);
-            this.PIlabel.TabIndex = 2;
-            this.PIlabel.Text = "Pelicula Id";
             // 
             // Tlabel
             // 
@@ -226,7 +206,7 @@
             // 
             this.limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
             this.limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.limpiarbutton.Location = new System.Drawing.Point(352, 253);
+            this.limpiarbutton.Location = new System.Drawing.Point(350, 244);
             this.limpiarbutton.Name = "limpiarbutton";
             this.limpiarbutton.Size = new System.Drawing.Size(96, 39);
             this.limpiarbutton.TabIndex = 5;

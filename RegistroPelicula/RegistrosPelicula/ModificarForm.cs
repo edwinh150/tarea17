@@ -1,4 +1,4 @@
-﻿using BLL;
+﻿using BLLS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,10 +35,13 @@ namespace RegistroPelicula.RegistrosPelicula
 
                 peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
 
+                peliculaC.Peliculaid = Convert.ToInt32(PeliculaIdtextBox.Text);
+
                 peliculaC.Modificar();
 
                 MessageBox.Show("Se guardo correctamente");
 
+                PeliculaIdtextBox.Clear();
                 TitulotextBox.Clear();
                 DescripciontextBox.Clear();
                 AnotextBox.Clear();
@@ -50,6 +53,17 @@ namespace RegistroPelicula.RegistrosPelicula
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void limpiarbutton_Click(object sender, EventArgs e)
+        {
+            PeliculaIdtextBox.Clear();
+            TitulotextBox.Clear();
+            DescripciontextBox.Clear();
+            AnotextBox.Clear();
+            CalificaciontextBox.Clear();
+            IMDBtextBox.Clear();
+            CategoriaIdtextBox.Clear();
         }
     }
 }
