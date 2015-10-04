@@ -74,5 +74,65 @@ namespace RegistroPelicula.RegistrosPelicula
             IMDBtextBox.Clear();
             CategoriaIdtextBox.Clear();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CIlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CategoriaIdtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Alabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PIlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AnotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescripciontextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TitulotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PeliculaIdtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

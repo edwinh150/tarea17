@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,40 @@ namespace RegistroPelicula.RegistrosPelicula
         public ModificarForm()
         {
             InitializeComponent();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Peliculas peliculaC = new Peliculas();
+            try
+            {
+                peliculaC.Titulo = TitulotextBox.Text;
+
+                peliculaC.Descripcion = DescripciontextBox.Text;
+
+                peliculaC.Ano = Convert.ToInt32(AnotextBox.Text);
+
+                peliculaC.Calificacion = Convert.ToInt32(CalificaciontextBox.Text);
+
+                peliculaC.IMDB = Convert.ToInt32(IMDBtextBox.Text);
+
+                peliculaC.CategoriaId = Convert.ToInt32(CategoriaIdtextBox.Text);
+
+                peliculaC.Modificar();
+
+                MessageBox.Show("Se guardo correctamente");
+
+                TitulotextBox.Clear();
+                DescripciontextBox.Clear();
+                AnotextBox.Clear();
+                CalificaciontextBox.Clear();
+                IMDBtextBox.Clear();
+                CategoriaIdtextBox.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
