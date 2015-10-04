@@ -53,7 +53,7 @@
             // 
             this.limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
             this.limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.limpiarbutton.Location = new System.Drawing.Point(368, 290);
+            this.limpiarbutton.Location = new System.Drawing.Point(402, 355);
             this.limpiarbutton.Name = "limpiarbutton";
             this.limpiarbutton.Size = new System.Drawing.Size(96, 39);
             this.limpiarbutton.TabIndex = 19;
@@ -68,7 +68,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(132, 46);
+            this.label1.Location = new System.Drawing.Point(166, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 18);
             this.label1.TabIndex = 18;
@@ -81,7 +81,7 @@
             this.groupBox1.Controls.Add(this.Calabel);
             this.groupBox1.Controls.Add(this.IMDBtextBox);
             this.groupBox1.Controls.Add(this.CalificaciontextBox);
-            this.groupBox1.Location = new System.Drawing.Point(271, 117);
+            this.groupBox1.Location = new System.Drawing.Point(305, 182);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(182, 136);
             this.groupBox1.TabIndex = 17;
@@ -127,7 +127,7 @@
             this.CIlabel.AutoSize = true;
             this.CIlabel.BackColor = System.Drawing.Color.Transparent;
             this.CIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CIlabel.Location = new System.Drawing.Point(67, 290);
+            this.CIlabel.Location = new System.Drawing.Point(101, 355);
             this.CIlabel.Name = "CIlabel";
             this.CIlabel.Size = new System.Drawing.Size(87, 15);
             this.CIlabel.TabIndex = 12;
@@ -135,7 +135,7 @@
             // 
             // CategoriaIdtextBox
             // 
-            this.CategoriaIdtextBox.Location = new System.Drawing.Point(67, 309);
+            this.CategoriaIdtextBox.Location = new System.Drawing.Point(101, 374);
             this.CategoriaIdtextBox.Name = "CategoriaIdtextBox";
             this.CategoriaIdtextBox.Size = new System.Drawing.Size(133, 20);
             this.CategoriaIdtextBox.TabIndex = 6;
@@ -145,7 +145,7 @@
             this.Alabel.AutoSize = true;
             this.Alabel.BackColor = System.Drawing.Color.Transparent;
             this.Alabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Alabel.Location = new System.Drawing.Point(67, 238);
+            this.Alabel.Location = new System.Drawing.Point(101, 303);
             this.Alabel.Name = "Alabel";
             this.Alabel.Size = new System.Drawing.Size(31, 15);
             this.Alabel.TabIndex = 13;
@@ -156,7 +156,7 @@
             this.Delabel.AutoSize = true;
             this.Delabel.BackColor = System.Drawing.Color.Transparent;
             this.Delabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delabel.Location = new System.Drawing.Point(67, 190);
+            this.Delabel.Location = new System.Drawing.Point(101, 255);
             this.Delabel.Name = "Delabel";
             this.Delabel.Size = new System.Drawing.Size(83, 15);
             this.Delabel.TabIndex = 14;
@@ -167,7 +167,7 @@
             this.Tlabel.AutoSize = true;
             this.Tlabel.BackColor = System.Drawing.Color.Transparent;
             this.Tlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tlabel.Location = new System.Drawing.Point(64, 135);
+            this.Tlabel.Location = new System.Drawing.Point(98, 200);
             this.Tlabel.Name = "Tlabel";
             this.Tlabel.Size = new System.Drawing.Size(43, 15);
             this.Tlabel.TabIndex = 15;
@@ -178,7 +178,7 @@
             this.PIlabel.AutoSize = true;
             this.PIlabel.BackColor = System.Drawing.Color.Transparent;
             this.PIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PIlabel.Location = new System.Drawing.Point(64, 109);
+            this.PIlabel.Location = new System.Drawing.Point(98, 174);
             this.PIlabel.Name = "PIlabel";
             this.PIlabel.Size = new System.Drawing.Size(75, 15);
             this.PIlabel.TabIndex = 16;
@@ -188,7 +188,7 @@
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(251, 290);
+            this.Guardarbutton.Location = new System.Drawing.Point(285, 355);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(96, 39);
             this.Guardarbutton.TabIndex = 11;
@@ -199,28 +199,28 @@
             // 
             // AnotextBox
             // 
-            this.AnotextBox.Location = new System.Drawing.Point(67, 254);
+            this.AnotextBox.Location = new System.Drawing.Point(101, 319);
             this.AnotextBox.Name = "AnotextBox";
             this.AnotextBox.Size = new System.Drawing.Size(133, 20);
             this.AnotextBox.TabIndex = 7;
             // 
             // DescripciontextBox
             // 
-            this.DescripciontextBox.Location = new System.Drawing.Point(67, 206);
+            this.DescripciontextBox.Location = new System.Drawing.Point(101, 271);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(168, 20);
             this.DescripciontextBox.TabIndex = 8;
             // 
             // TitulotextBox
             // 
-            this.TitulotextBox.Location = new System.Drawing.Point(67, 151);
+            this.TitulotextBox.Location = new System.Drawing.Point(101, 216);
             this.TitulotextBox.Name = "TitulotextBox";
             this.TitulotextBox.Size = new System.Drawing.Size(168, 20);
             this.TitulotextBox.TabIndex = 9;
             // 
             // PeliculaIdtextBox
             // 
-            this.PeliculaIdtextBox.Location = new System.Drawing.Point(156, 106);
+            this.PeliculaIdtextBox.Location = new System.Drawing.Point(190, 171);
             this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
             this.PeliculaIdtextBox.Size = new System.Drawing.Size(79, 20);
             this.PeliculaIdtextBox.TabIndex = 10;
@@ -229,7 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 424);
+            this.BackgroundImage = global::RegistroPelicula.Properties.Resources.tiras_de_pelicula_17_1122222402;
+            this.ClientSize = new System.Drawing.Size(618, 547);
             this.Controls.Add(this.limpiarbutton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);

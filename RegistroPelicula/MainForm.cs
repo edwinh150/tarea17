@@ -43,5 +43,12 @@ namespace RegistroPelicula
             mod.MdiParent = this;
             mod.Show();
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminarForm eli = new EliminarForm();
+            eli.MdiParent = this;
+            eli.Show();
+        }
     }
 }

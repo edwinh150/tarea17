@@ -103,6 +103,16 @@ namespace RegistroPelicula.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tiras_de_pelicula_17_1122222402 {
+            get {
+                object obj = ResourceManager.GetObject("tiras-de-pelicula_17-1122222402", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ver_Peliculas_Completas_Online_Gratis {
             get {
                 object obj = ResourceManager.GetObject("Ver-Peliculas-Completas-Online-Gratis", resourceCulture);

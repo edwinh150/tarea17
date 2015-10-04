@@ -39,7 +39,7 @@ namespace RegistroPelicula.RegistrosPelicula
 
                 peliculaC.Modificar();
 
-                MessageBox.Show("Se guardo correctamente");
+                MessageBox.Show("Se modifico correctamente");
 
                 PeliculaIdtextBox.Clear();
                 TitulotextBox.Clear();

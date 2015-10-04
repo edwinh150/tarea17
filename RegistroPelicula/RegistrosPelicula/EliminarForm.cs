@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using BLLS;
 
 namespace RegistroPelicula.RegistrosPelicula
 {
@@ -20,11 +20,16 @@ namespace RegistroPelicula.RegistrosPelicula
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            ConexionDb con = new ConexionDb();
-
+            Peliculas peliculaC = new Peliculas();
             try
             {
-                ResultadodataGridView.DataSource = con.ObtenerDatos("select Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId from PeliculasT where  PeliculaId = " + Convert.ToInt32(ConsultartextBox.Text));
+                peliculaC.Peliculaid = Convert.ToInt32(BuscarEtextBox.Text);
+
+                peliculaC.Eliminar();
+
+                MessageBox.Show("Se Borro correctamente");
+
+                BuscarEtextBox.Clear();
 
             }
             catch (Exception ex)
