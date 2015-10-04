@@ -77,6 +77,8 @@
             // ConsultarcomboBox
             // 
             this.ConsultarcomboBox.FormattingEnabled = true;
+            this.ConsultarcomboBox.Items.AddRange(new object[] {
+            "PeliculasId"});
             this.ConsultarcomboBox.Location = new System.Drawing.Point(18, 14);
             this.ConsultarcomboBox.Name = "ConsultarcomboBox";
             this.ConsultarcomboBox.Size = new System.Drawing.Size(137, 21);
@@ -90,6 +92,7 @@
             this.Consultarbutton.TabIndex = 1;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // ConsultartextBox
             // 
