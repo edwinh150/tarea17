@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace DAL
 {
     // Capa de conexion ya creada
+
     public class ConexionDb
     {
         private SqlConnection con;
