@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Registro
+
 namespace RegistroPelicula.RegistrosPelicula
 {
     public partial class ModificarForm : Form
