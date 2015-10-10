@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using DAL;
 namespace BLLS
 {
         // Capa de negocio ya creada
-        public class Peliculas
+        public class Peliculas : ClaseMaestra
         {
             public int Peliculaid { get; set; }
 
@@ -49,40 +50,55 @@ namespace BLLS
                 this.Peliculaid = peliculaid;
             }
 
-            public bool Insertar()
-            {
-                bool retorno = false;
+        public override bool Insertar()
+        {
+            bool retorno = false;
 
-                ConexionDb conexion = new ConexionDb();
-
-
-                conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId) Values('{0}','{1}','{2}','{3}','{4}','{5}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId));
-
-                return retorno;
-            }
-
-            public bool Modificar()
-            {
-                bool retorno = false;
-
-                ConexionDb conexion = new ConexionDb();
+            ConexionDb conexion = new ConexionDb();
 
 
-                conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' where  PeliculaId = '{6}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Peliculaid));
+            conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId) Values('{0}','{1}','{2}','{3}','{4}','{5}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId));
 
-                return retorno;
-            }
+            return retorno;
+        }
 
-            public bool Eliminar()
-            {
-                bool retorno = false;
+        public override bool Modificar()
+        {
+            bool retorno = false;
 
-                ConexionDb conexion = new ConexionDb();
+            ConexionDb conexion = new ConexionDb();
 
 
-                conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
+            conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' where  PeliculaId = '{6}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Peliculaid));
 
-                return retorno;
-            }
+            return retorno;
+        }
+
+        public override bool Eliminar()
+        {
+            bool retorno = false;
+
+            ConexionDb conexion = new ConexionDb();
+
+
+            conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
+
+            return retorno;
+        }
+
+        public override bool Buscar(int IdBuscado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override DataTable Listado(string Campos, string Condicion, string Orden)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool ObtenerId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

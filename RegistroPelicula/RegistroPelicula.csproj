@@ -117,16 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLLS\BLLS.csproj">
-      <Project>{51e3e7c7-91ec-4055-9b98-7344e1a57e2c}</Project>
-      <Name>BLLS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{6696a0c1-3d3f-40dd-95c6-5ae29b01a9e1}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\1442212393_Save.png" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +136,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PeliculasT.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLLS\BLLS.csproj">
+      <Project>{51e3e7c7-91ec-4055-9b98-7344e1a57e2c}</Project>
+      <Name>BLLS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{6696a0c1-3d3f-40dd-95c6-5ae29b01a9e1}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
