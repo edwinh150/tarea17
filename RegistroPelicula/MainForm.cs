@@ -55,6 +55,7 @@ namespace RegistroPelicula
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
             ConexionDb con = new ConexionDb();
+
             ReproducirForm rp = new ReproducirForm();
 
             if (ConcomboBox.Text == "Todos")
