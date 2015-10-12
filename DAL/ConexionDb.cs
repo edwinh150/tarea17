@@ -17,7 +17,7 @@ namespace DAL
 
         public ConexionDb()
         {
-            con = new SqlConnection("Data Source=EDWINH150\\SQLEXPRESS; Initial Catalog=Peliculas; Integrated Security=True");
+            con = new SqlConnection("Data Source=DARLENISM\\SQLEXPRESS; Initial Catalog=Peliculas; Integrated Security=True");
             Cmd = new SqlCommand();
         }
 

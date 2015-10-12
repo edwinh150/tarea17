@@ -9,7 +9,13 @@ create table PeliculasT (
   Ano int,
   Calificacion int,
   IMDB int,
-  CategoriaId int
+  CategoriaId varchar(100),
+  Genero varchar(50), 
+  RutadeImagen varchar(100), 
+  RutadePelicula varchar(100)
   );
 
   select * from PeliculasT
+
+  drop table PeliculasT
+

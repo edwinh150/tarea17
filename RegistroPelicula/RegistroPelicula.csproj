@@ -54,29 +54,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrosPelicula\AgregarForm.cs">
+    <Compile Include="ReproducirForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrosPelicula\AgregarForm.Designer.cs">
-      <DependentUpon>AgregarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrosPelicula\ConsultarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrosPelicula\ConsultarForm.Designer.cs">
-      <DependentUpon>ConsultarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrosPelicula\EliminarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrosPelicula\EliminarForm.Designer.cs">
-      <DependentUpon>EliminarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrosPelicula\ModificarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrosPelicula\ModificarForm.Designer.cs">
-      <DependentUpon>ModificarForm.cs</DependentUpon>
+    <Compile Include="ReproducirForm.Designer.cs">
+      <DependentUpon>ReproducirForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -91,17 +73,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegistrosPelicula\AgregarForm.resx">
-      <DependentUpon>AgregarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrosPelicula\ConsultarForm.resx">
-      <DependentUpon>ConsultarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrosPelicula\EliminarForm.resx">
-      <DependentUpon>EliminarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrosPelicula\ModificarForm.resx">
-      <DependentUpon>ModificarForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReproducirForm.resx">
+      <DependentUpon>ReproducirForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PeliculasT.sql" />
+    <None Include="Resources\1444618275_play_store.png" />
+    <None Include="Resources\1444618207_edit-delete.png" />
+    <None Include="Resources\1444590159_system-search.png" />
+    <None Include="Resources\1444590127_edit-find-replace.png" />
+    <None Include="Resources\1444590269_1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLLS\BLLS.csproj">
@@ -146,6 +124,25 @@
       <Project>{6696a0c1-3d3f-40dd-95c6-5ae29b01a9e1}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
