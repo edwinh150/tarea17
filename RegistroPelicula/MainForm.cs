@@ -58,6 +58,7 @@ namespace RegistroPelicula
 
             ReproducirForm rp = new ReproducirForm();
 
+
             if (ConcomboBox.Text == "Todos")
             {
                 try
