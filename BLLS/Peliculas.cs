@@ -112,9 +112,11 @@ namespace BLLS
             return con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0}", IdBuscado));
         }
 
-        public override DataTable Listado(string Campos, string Condicion, string Orden)
+        public override DataTable Listado(string Campos, string Condicion)
         {
-            throw new NotImplementedException();
+            ConexionDb con = new ConexionDb();
+
+            return con.ObtenerDatos("select * from PeliculasT where " + Condicion + " = " + Campos);
         }
     }
 }

@@ -543,16 +543,19 @@
             // 
             // ConcomboBox
             // 
+            this.ConcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ConcomboBox.FormattingEnabled = true;
             this.ConcomboBox.Items.AddRange(new object[] {
             "Todos",
             "Id",
-            "Titulo"});
+            "Titulo",
+            "Ano",
+            "Categoria",
+            "Genero"});
             this.ConcomboBox.Location = new System.Drawing.Point(24, 19);
             this.ConcomboBox.Name = "ConcomboBox";
             this.ConcomboBox.Size = new System.Drawing.Size(135, 21);
             this.ConcomboBox.TabIndex = 2;
-            this.ConcomboBox.Text = "Todos";
             // 
             // Consultarbutton
             // 
@@ -652,7 +655,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ComboBox CategoriacomboBox;
-        private System.Windows.Forms.TextBox GenerotextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox RutatextBox;
@@ -662,6 +664,7 @@
         private System.Windows.Forms.Button Rutabutton;
         private System.Windows.Forms.ComboBox AnocomboBox;
         private System.Windows.Forms.Button Reproducirbutton;
+        private System.Windows.Forms.TextBox GenerotextBox;
     }
 }
 

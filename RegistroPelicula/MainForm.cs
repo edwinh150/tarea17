@@ -15,11 +15,11 @@ namespace RegistroPelicula
     public partial class MainForm : Form
     {
         Peliculas peliculaC = new Peliculas();
-        string video;
 
         public MainForm()
         {
             InitializeComponent();
+            ConcomboBox.Text = "Todos";
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,30 +56,17 @@ namespace RegistroPelicula
         {
             ConexionDb con = new ConexionDb();
 
-            ReproducirForm rp = new ReproducirForm();
+            Peliculas peli = new Peliculas();
 
+            ReproducirForm rp = new ReproducirForm();
 
             if (ConcomboBox.Text == "Todos")
             {
+                ConsultartextBox.Clear();
                 try
                 {
                     ResultadodataGridView.DataSource = con.ObtenerDatos("Select * from PeliculasT");
 
-                    rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            if (ConcomboBox.Text == "Id")
-            {
-                try
-                {
-                    ResultadodataGridView.DataSource = con.ObtenerDatos("select PeliculaId, Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, RutadeImagen, RutadePelicula from PeliculasT where PeliculaId = " + Convert.ToInt32(ConsultartextBox.Text));
-                    rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
-
                 }
                 catch (Exception ex)
                 {
@@ -87,16 +74,74 @@ namespace RegistroPelicula
                 }
             }
 
-            if (ConcomboBox.Text == "Titulo")
+            if (ConsultartextBox.Text.Length == 0 && ConcomboBox.Text != "Todos")
             {
-                try
+                MessageBox.Show("Ingrese un campo para poder consultar!!!!","Error");
+            }
+            else
+            { 
+                if (ConcomboBox.Text == "Id")
                 {
-                    ResultadodataGridView.DataSource = con.ObtenerDatos(String.Format("select PeliculaId, Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, RutadeImagen, RutadePelicula from PeliculasT where Titulo = '{0}' ", ConsultartextBox.Text));
-
+                    try
+                    {
+                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "PeliculaId");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex)
+
+                if (ConcomboBox.Text == "Titulo")
                 {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Titulo");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                if (ConcomboBox.Text == "Categoria")
+                {
+                    try
+                    {
+                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "CategoriaId");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                if (ConcomboBox.Text == "Genero")
+                {
+                    try
+                    {
+                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Genero");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                if (ConcomboBox.Text == "Ano")
+                {
+                    try
+                    {
+                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Ano");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
@@ -163,16 +208,6 @@ namespace RegistroPelicula
         private void Modificarbutton_Click(object sender, EventArgs e)
         {
             ConexionDb con = new ConexionDb();
-
-            try
-            {
-                //PeliculaIdtextBox.Text = con.ObtenerDatos("Select * from PeliculasT");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
             if (MessageBox.Show("Realmente desea Modificar?", "Modificando Archivo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -291,6 +326,11 @@ namespace RegistroPelicula
             ReproducirForm Rp = new ReproducirForm();
             Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
             Rp.Show();
+        }
+
+        private void Limpiarbutton_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
