@@ -59,7 +59,7 @@ namespace RegistroPelicula
 
             Peliculas peli = new Peliculas();
 
-            ReproducirForm rp = new ReproducirForm();
+           // ReproducirForm rp = new ReproducirForm();
 
             if (ConcomboBox.Text == "Todos")
             {
@@ -316,9 +316,9 @@ namespace RegistroPelicula
 
         private void Reproducirbutton_Click(object sender, EventArgs e)
         {
-            ReproducirForm Rp = new ReproducirForm();
-            Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
-            Rp.Show();
+            //ReproducirForm Rp = new ReproducirForm();
+            //Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
+            //Rp.Show();
         }
 
         private void Limpiarbutton_Click_1(object sender, EventArgs e)
