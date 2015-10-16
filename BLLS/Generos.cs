@@ -73,13 +73,6 @@ namespace BLLS
             return dt.Rows.Count > 0;
         }
 
-        public override DataTable BuscarPelicula(int IdBuscado)
-        {
-            ConexionDb conexion = new ConexionDb();
-
-            return conexion.ObtenerDatos(string.Format("select * from Generos where Descripcion = '{0}' ", IdBuscado));
-        }
-
         public override DataTable Listado(string Campos, string Condicion)
         {
             ConexionDb con = new ConexionDb();

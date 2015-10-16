@@ -18,8 +18,6 @@ namespace BLLS
 
             public abstract bool Buscar(int IdBuscado);
 
-            public abstract DataTable BuscarPelicula(int IdBuscado);
-
             public abstract DataTable Listado(string Campos, string Condicion);
 
     }
