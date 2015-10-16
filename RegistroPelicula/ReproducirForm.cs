@@ -17,6 +17,7 @@ namespace RegistroPelicula
             InitializeComponent();
         }
 
+
         private void Playbutton_Click(object sender, EventArgs e)
         {
             PeliculasaxWindowsMediaPlayer.Ctlcontrols.play();

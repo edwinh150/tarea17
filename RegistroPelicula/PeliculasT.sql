@@ -30,4 +30,5 @@ create table PeliculasT (
 
   Insert Into Generos (Descripcion) Values ('Aventura')
 
+
   Insert Into Generos (Descripcion) Values ('Terror')

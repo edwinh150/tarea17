@@ -160,7 +160,6 @@ namespace RegistroPelicula
             {
                 MessageBox.Show(ex.Message);
             }
-
             
             try
             {
