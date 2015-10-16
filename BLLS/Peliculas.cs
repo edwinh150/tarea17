@@ -116,6 +116,7 @@ namespace BLLS
             }
 
             return dt.Rows.Count > 0;
+
         }
 
         public override DataTable BuscarPelicula(int IdBuscado)

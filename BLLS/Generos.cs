@@ -65,7 +65,9 @@ namespace BLLS
             dt = con.ObtenerDatos(string.Format("select * from Generos where GeneroId = '{0}' ", IdBuscado));
             if (dt.Rows.Count > 0)
             {
+
                 this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
+
             }
 
             return dt.Rows.Count > 0;
