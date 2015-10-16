@@ -12,11 +12,11 @@ namespace BLLS
 
             public abstract bool Insertar();
 
-            public abstract bool Modificar(int id);
+            public abstract bool Editar(int id);
 
             public abstract bool Eliminar();
 
-            public abstract DataTable Buscar(int IdBuscado);
+            public abstract bool Buscar(int IdBuscado);
 
             public abstract DataTable BuscarPelicula(int IdBuscado);
 

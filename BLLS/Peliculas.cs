@@ -74,7 +74,7 @@ namespace BLLS
             return retorno;
         }
 
-        public override bool Modificar(int id)
+        public override bool Editar(int id)
         {
             bool retorno = false;
 
@@ -98,11 +98,24 @@ namespace BLLS
             return retorno;
         }
 
-        public override DataTable Buscar(int IdBuscado)
+        public override bool Buscar(int IdBuscado)
         {
             ConexionDb con = new ConexionDb();
+            DataTable dt = new DataTable();
 
-            return con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0} ", IdBuscado));
+            dt = con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0} ", IdBuscado));
+            if (dt.Rows.Count > 0)
+            {
+                this.Titulo = dt.Rows[0]["Titulo"].ToString();
+                this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
+                this.Ano = (int)dt.Rows[0]["Ano"];
+                this.Calificacion = (int)dt.Rows[0]["Calificacion"];
+                this.IMDB = (int)dt.Rows[0]["IMDB"];
+                this.CategoriaId = dt.Rows[0]["CategoriaId"].ToString();
+                this.RutadePelicula = dt.Rows[0]["RutadePelicula"].ToString();
+            }
+
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable BuscarPelicula(int IdBuscado)

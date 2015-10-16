@@ -15,6 +15,7 @@ namespace RegistroPelicula
     public partial class MainForm : Form
     {
         Peliculas peliculaC = new Peliculas();
+        
 
         public MainForm()
         {
@@ -175,8 +176,6 @@ namespace RegistroPelicula
 
                 peliculaC.CategoriaId = CategoriacomboBox.Text;
 
-                peliculaC.Genero = GenerotextBox.Text;
-
                 peliculaC.RutadeImagen = PortadapictureBox.ImageLocation;
 
                 peliculaC.RutadePelicula = RutatextBox.Text;
@@ -191,7 +190,6 @@ namespace RegistroPelicula
                 CalificaciontextBox.Clear();
                 IMDBtextBox.Clear();
                 CategoriacomboBox.Text = "";
-                GenerotextBox.Clear();
                 RutatextBox.Clear();
             }
             catch (Exception ex)
@@ -227,13 +225,11 @@ namespace RegistroPelicula
 
                     peliculaC.CategoriaId = CategoriacomboBox.Text;
 
-                    peliculaC.Genero = GenerotextBox.Text;
-
                     peliculaC.RutadeImagen = PortadapictureBox.ImageLocation;
 
                     peliculaC.RutadePelicula = RutatextBox.Text;
 
-                    peliculaC.Modificar(id);
+                    peliculaC.Editar(id);
 
                     MessageBox.Show("Se modifico correctamente");
 
@@ -243,7 +239,6 @@ namespace RegistroPelicula
                     CalificaciontextBox.Clear();
                     IMDBtextBox.Clear();
                     CategoriacomboBox.Text = "";
-                    GenerotextBox.Clear();
                     RutatextBox.Clear();
                 }
                 catch (Exception ex)
@@ -305,7 +300,6 @@ namespace RegistroPelicula
             CalificaciontextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Calificacion"].ToString();
             IMDBtextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["IMDB"].ToString();
             CategoriacomboBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["CategoriaId"].ToString();
-            GenerotextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Genero"].ToString();
             RutatextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["RutadePelicula"].ToString();
         }
 
@@ -317,7 +311,6 @@ namespace RegistroPelicula
             CalificaciontextBox.Clear();
             IMDBtextBox.Clear();
             CategoriacomboBox.Text = "";
-            GenerotextBox.Clear();
             RutatextBox.Clear();
         }
 
@@ -330,7 +323,15 @@ namespace RegistroPelicula
 
         private void Limpiarbutton_Click_1(object sender, EventArgs e)
         {
+            ResultadodataGridView.DataBindings.Clear();
+            ConsultartextBox.Clear();
+        }
+
+        private void agregarGeneroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GeneroForm Genero = new GeneroForm();
             
+            Genero.Show();
         }
     }
 }

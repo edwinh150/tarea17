@@ -19,3 +19,15 @@ create table PeliculasT (
 
   drop table PeliculasT
 
+  drop table GeneroT
+
+  create table Generos (
+  GeneroId int identity(1,1), 
+  Descripcion varchar(100)
+  );
+
+  select * from Generos
+
+  Insert Into Generos (Descripcion) Values ('Aventura')
+
+  Insert Into Generos (Descripcion) Values ('Terror')

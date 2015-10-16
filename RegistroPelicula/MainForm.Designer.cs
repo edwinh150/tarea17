@@ -30,12 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.CategoriacomboBox = new System.Windows.Forms.ComboBox();
-            this.GenerotextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.RutatextBox = new System.Windows.Forms.TextBox();
@@ -67,6 +67,10 @@
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
             this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Limpiarbutton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).BeginInit();
@@ -74,6 +78,7 @@
             this.tabPage2.SuspendLayout();
             this.ConsultargroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,22 +88,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1065, 574);
+            this.tabControl1.Size = new System.Drawing.Size(1065, 548);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::RegistroPelicula.Properties.Resources.tiras_de_pelicula_17_1122222402;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.AnocomboBox);
             this.tabPage1.Controls.Add(this.Rutabutton);
             this.tabPage1.Controls.Add(this.Buscarbutton);
             this.tabPage1.Controls.Add(this.Eliminarbutton);
             this.tabPage1.Controls.Add(this.CategoriacomboBox);
-            this.tabPage1.Controls.Add(this.GenerotextBox);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.RutatextBox);
@@ -120,10 +125,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1057, 548);
+            this.tabPage1.Size = new System.Drawing.Size(1057, 522);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(773, 316);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(181, 21);
+            this.comboBox1.TabIndex = 21;
             // 
             // AnocomboBox
             // 
@@ -224,7 +237,7 @@
             // 
             this.Buscarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590159_system_search;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(842, 411);
+            this.Buscarbutton.Location = new System.Drawing.Point(842, 391);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(83, 39);
             this.Buscarbutton.TabIndex = 18;
@@ -237,7 +250,7 @@
             // 
             this.Eliminarbutton.Image = global::RegistroPelicula.Properties.Resources._1444618207_edit_delete;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(931, 411);
+            this.Eliminarbutton.Location = new System.Drawing.Point(931, 391);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 39);
             this.Eliminarbutton.TabIndex = 17;
@@ -264,13 +277,6 @@
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(210, 21);
             this.CategoriacomboBox.TabIndex = 16;
-            // 
-            // GenerotextBox
-            // 
-            this.GenerotextBox.Location = new System.Drawing.Point(773, 307);
-            this.GenerotextBox.Name = "GenerotextBox";
-            this.GenerotextBox.Size = new System.Drawing.Size(180, 20);
-            this.GenerotextBox.TabIndex = 15;
             // 
             // label5
             // 
@@ -310,7 +316,7 @@
             this.PortadapictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PortadapictureBox.Location = new System.Drawing.Point(87, 139);
             this.PortadapictureBox.Name = "PortadapictureBox";
-            this.PortadapictureBox.Size = new System.Drawing.Size(199, 194);
+            this.PortadapictureBox.Size = new System.Drawing.Size(199, 168);
             this.PortadapictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PortadapictureBox.TabIndex = 11;
             this.PortadapictureBox.TabStop = false;
@@ -330,7 +336,7 @@
             // 
             this.Nuevobutton.Image = global::RegistroPelicula.Properties.Resources._1444590269_1;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(566, 411);
+            this.Nuevobutton.Location = new System.Drawing.Point(566, 391);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 39);
             this.Nuevobutton.TabIndex = 9;
@@ -362,7 +368,7 @@
             // 
             this.Modificarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590127_edit_find_replace;
             this.Modificarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton.Location = new System.Drawing.Point(655, 411);
+            this.Modificarbutton.Location = new System.Drawing.Point(655, 391);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(92, 39);
             this.Modificarbutton.TabIndex = 6;
@@ -460,7 +466,7 @@
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(753, 411);
+            this.Guardarbutton.Location = new System.Drawing.Point(753, 391);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 39);
             this.Guardarbutton.TabIndex = 1;
@@ -505,13 +511,14 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::RegistroPelicula.Properties.Resources.tira_de_pelicula_antigua_antiga_pixmac_imagen_85285258;
+            this.tabPage2.Controls.Add(this.Limpiarbutton);
             this.tabPage2.Controls.Add(this.Reproducirbutton);
             this.tabPage2.Controls.Add(this.ConsultargroupBox);
             this.tabPage2.Controls.Add(this.ResultadodataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1057, 548);
+            this.tabPage2.Size = new System.Drawing.Size(1057, 522);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consultar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -520,7 +527,7 @@
             // 
             this.Reproducirbutton.Image = global::RegistroPelicula.Properties.Resources._1444618275_play_store;
             this.Reproducirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Reproducirbutton.Location = new System.Drawing.Point(900, 514);
+            this.Reproducirbutton.Location = new System.Drawing.Point(900, 485);
             this.Reproducirbutton.Name = "Reproducirbutton";
             this.Reproducirbutton.Size = new System.Drawing.Size(149, 31);
             this.Reproducirbutton.TabIndex = 5;
@@ -588,7 +595,7 @@
             this.ResultadodataGridView.Location = new System.Drawing.Point(10, 65);
             this.ResultadodataGridView.Name = "ResultadodataGridView";
             this.ResultadodataGridView.ReadOnly = true;
-            this.ResultadodataGridView.Size = new System.Drawing.Size(1039, 443);
+            this.ResultadodataGridView.Size = new System.Drawing.Size(1039, 417);
             this.ResultadodataGridView.TabIndex = 3;
             this.ResultadodataGridView.Tag = "";
             // 
@@ -600,6 +607,43 @@
             // 
             this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peliculasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1065, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // peliculasToolStripMenuItem
+            // 
+            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarGeneroToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Text = "Peliculas";
+            // 
+            // agregarGeneroToolStripMenuItem
+            // 
+            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
+            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
+            // 
+            // Limpiarbutton
+            // 
+            this.Limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
+            this.Limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Limpiarbutton.Location = new System.Drawing.Point(745, 485);
+            this.Limpiarbutton.Name = "Limpiarbutton";
+            this.Limpiarbutton.Size = new System.Drawing.Size(149, 31);
+            this.Limpiarbutton.TabIndex = 5;
+            this.Limpiarbutton.Text = "Limpiar";
+            this.Limpiarbutton.UseVisualStyleBackColor = true;
+            this.Limpiarbutton.Click += new System.EventHandler(this.Reproducirbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +652,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1065, 572);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Peliculas Al Instante";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -621,7 +668,10 @@
             this.ConsultargroupBox.ResumeLayout(false);
             this.ConsultargroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -664,7 +714,11 @@
         private System.Windows.Forms.Button Rutabutton;
         private System.Windows.Forms.ComboBox AnocomboBox;
         private System.Windows.Forms.Button Reproducirbutton;
-        private System.Windows.Forms.TextBox GenerotextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem peliculasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarGeneroToolStripMenuItem;
+        private System.Windows.Forms.Button Limpiarbutton;
     }
 }
 
