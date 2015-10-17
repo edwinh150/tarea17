@@ -60,9 +60,9 @@ namespace BLLS
             return retorno;
         }
 
-        public override DataTable Listado(string Campos, string Condicion)
+        public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return con.ObtenerDatos("select * from Autores where " + Condicion + " = " + Campos);
+            return con.ObtenerDatos("select " + Campos + " from Autores where " + Condicion + "  " + Orden);
         }
     }
 }

@@ -73,11 +73,11 @@ namespace BLLS
             return dt.Rows.Count > 0;
         }
 
-        public override DataTable Listado(string Campos, string Condicion)
+        public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             ConexionDb con = new ConexionDb();
 
-            return con.ObtenerDatos("select * from Generos where " + Condicion + " = " + Campos);
+            return con.ObtenerDatos("select " + Campos + "  from Generos where " + Condicion + " " + Orden);
         }
     }
 }
