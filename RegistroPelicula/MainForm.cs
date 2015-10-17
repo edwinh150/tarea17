@@ -59,7 +59,7 @@ namespace RegistroPelicula
 
             Peliculas peli = new Peliculas();
 
-            ReproducirForm rp = new ReproducirForm();
+           // ReproducirForm rp = new ReproducirForm();
 
             if (ConcomboBox.Text == "Todos")
             {
@@ -292,7 +292,7 @@ namespace RegistroPelicula
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            int idP = Convert.ToInt32(PeliculaIdtextBox.Text);
+            /*int idP = Convert.ToInt32(PeliculaIdtextBox.Text);
             TitulotextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Titulo"].ToString();
             DescripciontextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Descripcion"].ToString();
             AnocomboBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Ano"].ToString();
@@ -300,6 +300,7 @@ namespace RegistroPelicula
             IMDBtextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["IMDB"].ToString();
             CategoriacomboBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["CategoriaId"].ToString();
             RutatextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["RutadePelicula"].ToString();
+            */
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -315,9 +316,9 @@ namespace RegistroPelicula
 
         private void Reproducirbutton_Click(object sender, EventArgs e)
         {
-            ReproducirForm Rp = new ReproducirForm();
-            Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
-            Rp.Show();
+            //ReproducirForm Rp = new ReproducirForm();
+            //Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
+            //Rp.Show();
         }
 
         private void Limpiarbutton_Click_1(object sender, EventArgs e)

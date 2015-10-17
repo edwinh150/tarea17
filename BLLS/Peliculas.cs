@@ -119,13 +119,6 @@ namespace BLLS
 
         }
 
-        public override DataTable BuscarPelicula(int IdBuscado)
-        {
-            ConexionDb con = new ConexionDb();
-
-            return con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0}", IdBuscado));
-        }
-
         public override DataTable Listado(string Campos, string Condicion)
         {
             ConexionDb con = new ConexionDb();
