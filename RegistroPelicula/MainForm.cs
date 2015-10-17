@@ -15,7 +15,8 @@ namespace RegistroPelicula
     public partial class MainForm : Form
     {
         Peliculas peliculaC = new Peliculas();
-        
+        public string ruta;
+
 
         public MainForm()
         {
@@ -85,7 +86,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "PeliculaId");
+                        //ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "PeliculaId");
                     }
                     catch (Exception ex)
                     {
@@ -97,7 +98,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Titulo");
+                        //ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Titulo");
 
                     }
                     catch (Exception ex)
@@ -110,7 +111,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "CategoriaId");
+                       // ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "CategoriaId");
 
                     }
                     catch (Exception ex)
@@ -123,7 +124,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Genero");
+                        //ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Genero");
 
                     }
                     catch (Exception ex)
@@ -136,7 +137,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Ano");
+                       // ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Ano");
 
                     }
                     catch (Exception ex)
@@ -292,15 +293,27 @@ namespace RegistroPelicula
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            /*int idP = Convert.ToInt32(PeliculaIdtextBox.Text);
-            TitulotextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Titulo"].ToString();
-            DescripciontextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Descripcion"].ToString();
-            AnocomboBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Ano"].ToString();
-            CalificaciontextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["Calificacion"].ToString();
-            IMDBtextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["IMDB"].ToString();
-            CategoriacomboBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["CategoriaId"].ToString();
-            RutatextBox.Text = peliculaC.BuscarPelicula(idP).Rows[0]["RutadePelicula"].ToString();
-            */
+            if (PeliculaIdtextBox.Text.Length > 0)
+            {
+                int idP = Convert.ToInt32(PeliculaIdtextBox.Text);
+                Generos genero = new Generos();
+
+                peliculaC.Buscar(idP);
+                TitulotextBox.Text = peliculaC.Titulo;
+                DescripciontextBox.Text = peliculaC.Descripcion;
+                AnocomboBox.Text = peliculaC.Ano.ToString();
+                CalificaciontextBox.Text = peliculaC.Calificacion.ToString();
+                IMDBtextBox.Text = peliculaC.IMDB.ToString();
+                CategoriacomboBox.Text = peliculaC.CategoriaId;
+                RutatextBox.Text = peliculaC.RutadePelicula;
+                PortadapictureBox.ImageLocation = peliculaC.RutadeImagen;
+                GenerocomboBox.Items.Add(genero.Listado("Descripcion", "1=1",""));
+            }
+            else
+            {
+                MessageBox.Show("Ingrese Id");
+            }
+            
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -316,9 +329,9 @@ namespace RegistroPelicula
 
         private void Reproducirbutton_Click(object sender, EventArgs e)
         {
-            //ReproducirForm Rp = new ReproducirForm();
-            //Rp.PeliculasaxWindowsMediaPlayer.URL = Convert.ToString(ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value);
-            //Rp.Show();
+            ReproducirForm Rp = new ReproducirForm();
+            ruta = ResultadodataGridView.CurrentRow.Cells["RutadePelicula"].Value.ToString();
+            Rp.Show();
         }
 
         private void Limpiarbutton_Click_1(object sender, EventArgs e)

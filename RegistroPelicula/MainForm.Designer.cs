@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.GenerocomboBox = new System.Windows.Forms.ComboBox();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -59,26 +64,21 @@
             this.Alabel = new System.Windows.Forms.Label();
             this.Delabel = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Limpiarbutton = new System.Windows.Forms.Button();
             this.Reproducirbutton = new System.Windows.Forms.Button();
             this.ConsultargroupBox = new System.Windows.Forms.GroupBox();
             this.ConcomboBox = new System.Windows.Forms.ComboBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.ConsultartextBox = new System.Windows.Forms.TextBox();
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
-            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Limpiarbutton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.ConsultargroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,11 +94,44 @@
             this.tabControl1.Size = new System.Drawing.Size(1065, 548);
             this.tabControl1.TabIndex = 7;
             // 
+            // openFileDialogImagen
+            // 
+            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
+            // 
+            // openFileDialogPeliculaV
+            // 
+            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peliculasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1065, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // peliculasToolStripMenuItem
+            // 
+            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarGeneroToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Text = "Peliculas";
+            // 
+            // agregarGeneroToolStripMenuItem
+            // 
+            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
+            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
+            // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::RegistroPelicula.Properties.Resources.tiras_de_pelicula_17_1122222402;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.GenerocomboBox);
             this.tabPage1.Controls.Add(this.AnocomboBox);
             this.tabPage1.Controls.Add(this.Rutabutton);
             this.tabPage1.Controls.Add(this.Buscarbutton);
@@ -130,13 +163,13 @@
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // GenerocomboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(773, 316);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 21;
+            this.GenerocomboBox.FormattingEnabled = true;
+            this.GenerocomboBox.Location = new System.Drawing.Point(773, 316);
+            this.GenerocomboBox.Name = "GenerocomboBox";
+            this.GenerocomboBox.Size = new System.Drawing.Size(181, 21);
+            this.GenerocomboBox.TabIndex = 21;
             // 
             // AnocomboBox
             // 
@@ -523,6 +556,18 @@
             this.tabPage2.Text = "Consultar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Limpiarbutton
+            // 
+            this.Limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
+            this.Limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Limpiarbutton.Location = new System.Drawing.Point(745, 485);
+            this.Limpiarbutton.Name = "Limpiarbutton";
+            this.Limpiarbutton.Size = new System.Drawing.Size(149, 31);
+            this.Limpiarbutton.TabIndex = 5;
+            this.Limpiarbutton.Text = "Limpiar";
+            this.Limpiarbutton.UseVisualStyleBackColor = true;
+            this.Limpiarbutton.Click += new System.EventHandler(this.Reproducirbutton_Click);
+            // 
             // Reproducirbutton
             // 
             this.Reproducirbutton.Image = global::RegistroPelicula.Properties.Resources._1444618275_play_store;
@@ -599,51 +644,6 @@
             this.ResultadodataGridView.TabIndex = 3;
             this.ResultadodataGridView.Tag = "";
             // 
-            // openFileDialogImagen
-            // 
-            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
-            // 
-            // openFileDialogPeliculaV
-            // 
-            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.peliculasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1065, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // peliculasToolStripMenuItem
-            // 
-            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarGeneroToolStripMenuItem});
-            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // agregarGeneroToolStripMenuItem
-            // 
-            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
-            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
-            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
-            // 
-            // Limpiarbutton
-            // 
-            this.Limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
-            this.Limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Limpiarbutton.Location = new System.Drawing.Point(745, 485);
-            this.Limpiarbutton.Name = "Limpiarbutton";
-            this.Limpiarbutton.Size = new System.Drawing.Size(149, 31);
-            this.Limpiarbutton.TabIndex = 5;
-            this.Limpiarbutton.Text = "Limpiar";
-            this.Limpiarbutton.UseVisualStyleBackColor = true;
-            this.Limpiarbutton.Click += new System.EventHandler(this.Reproducirbutton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,6 +659,8 @@
             this.Text = "Peliculas Al Instante";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).EndInit();
@@ -668,8 +670,6 @@
             this.ConsultargroupBox.ResumeLayout(false);
             this.ConsultargroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -714,7 +714,7 @@
         private System.Windows.Forms.Button Rutabutton;
         private System.Windows.Forms.ComboBox AnocomboBox;
         private System.Windows.Forms.Button Reproducirbutton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox GenerocomboBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem peliculasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarGeneroToolStripMenuItem;

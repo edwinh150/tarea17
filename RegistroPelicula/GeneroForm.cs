@@ -74,7 +74,8 @@ namespace RegistroPelicula
         {
             int idP = Convert.ToInt32(GenerotextBox.Text);
 
-            DescripcionGenerotextBox.Text = Genero.Buscar(idP).ToString();
+            Genero.Buscar(idP);
+            DescripcionGenerotextBox.Text = Genero.Descripcion.ToString();
         }
 
         private void Modificarbutton_Click(object sender, EventArgs e)

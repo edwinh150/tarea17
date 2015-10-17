@@ -28,19 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReproducirForm));
+            this.ReproductoraxWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductoraxWindowsMediaPlayer)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReproductoraxWindowsMediaPlayer
+            // 
+            this.ReproductoraxWindowsMediaPlayer.Enabled = true;
+            this.ReproductoraxWindowsMediaPlayer.Location = new System.Drawing.Point(12, 12);
+            this.ReproductoraxWindowsMediaPlayer.Name = "ReproductoraxWindowsMediaPlayer";
+            this.ReproductoraxWindowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("ReproductoraxWindowsMediaPlayer.OcxState")));
+            this.ReproductoraxWindowsMediaPlayer.Size = new System.Drawing.Size(862, 412);
+            this.ReproductoraxWindowsMediaPlayer.TabIndex = 0;
+            this.ReproductoraxWindowsMediaPlayer.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // ReproducirForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 468);
+            this.ClientSize = new System.Drawing.Size(886, 436);
+            this.Controls.Add(this.ReproductoraxWindowsMediaPlayer);
             this.Name = "ReproducirForm";
             this.Text = "ReproducirForm";
+            ((System.ComponentModel.ISupportInitialize)(this.ReproductoraxWindowsMediaPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private AxWMPLib.AxWindowsMediaPlayer ReproductoraxWindowsMediaPlayer;
     }
 }
