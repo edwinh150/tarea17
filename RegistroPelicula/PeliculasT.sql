@@ -12,7 +12,9 @@ create table PeliculasT (
   CategoriaId varchar(100),
   Genero varchar(50), 
   RutadeImagen varchar(100), 
-  RutadePelicula varchar(100)
+  RutadePelicula varchar(100),
+  Autor varchar(100),
+  Estudio varchar(100)
   );
 
   select * from PeliculasT
@@ -25,6 +27,12 @@ create table PeliculasT (
   GeneroId int identity(1,1), 
   Descripcion varchar(100)
   );
+
+  create table Autores (
+  AutoresId int identity(1,1),
+  Nombre varchar(100)
+  );
+
 
   select * from Generos
 
