@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutorForm.Designer.cs">
+      <DependentUpon>AutorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="ReproducirForm.Designer.cs">
       <DependentUpon>ReproducirForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AutorForm.resx">
+      <DependentUpon>AutorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneroForm.resx">
       <DependentUpon>GeneroForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
 using BLLS;
 
 namespace RegistroPelicula
 {
-    public partial class GeneroForm : Form
+    public partial class AutorForm : Form
     {
-        Generos Genero = new Generos();
+        Autores Autor = new Autores();
 
-        public GeneroForm()
+        public AutorForm()
         {
             InitializeComponent();
         }
@@ -24,17 +24,17 @@ namespace RegistroPelicula
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             ConexionDb con = new ConexionDb();
-            if (GeneroIdtextBox.Text.Length > 0)
+            if (AutoresIdtextBox.Text.Length > 0)
             {
                 if (MessageBox.Show("Realmente desea Modificarlo?", "Modificando Archivo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     try
                     {
-                        int id = Convert.ToInt32(GeneroIdtextBox.Text);
+                        int id = Convert.ToInt32(AutoresIdtextBox.Text);
 
-                        Genero.Descripcion = DescripcionGenerotextBox.Text;
+                        Autor.NombreAutores = NombreAutorestextBox.Text;
 
-                        Genero.Editar(id);
+                        Autor.Editar(id);
 
                         MessageBox.Show("Se Modifico correctamente");
                     }
@@ -48,62 +48,51 @@ namespace RegistroPelicula
             {
                 try
                 {
-                    Genero.Descripcion = DescripcionGenerotextBox.Text;
+                    Autor.NombreAutores = NombreAutorestextBox.Text;
 
-                    Genero.Insertar();
+                    Autor.Insertar();
 
-                    MessageBox.Show("Guardado Correctamente");
-
+                    MessageBox.Show("Se Guardo correctamente");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-
-            GeneroIdtextBox.Clear();
-            DescripcionGenerotextBox.Clear();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            GeneroIdtextBox.Clear();
-            DescripcionGenerotextBox.Clear();
+            AutoresIdtextBox.Clear();
+            NombreAutorestextBox.Clear();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Realmente desea borrarlo?", "Borrarando Archivo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Realmente desea borrarlo?", "Borrarando Archivo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
-                    Genero.GeneroId = Convert.ToInt32(GeneroIdtextBox.Text);
+                    Autor.AutoresId = Convert.ToInt32(AutoresIdtextBox.Text);
 
-                    Genero.Eliminar();
+                    Autor.Eliminar();
 
                     MessageBox.Show("Se Borro correctamente");
-                    GeneroIdtextBox.Clear();
+                    AutoresIdtextBox.Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            int idP = Convert.ToInt32(GeneroIdtextBox.Text);
+            int idP = Convert.ToInt32(AutoresIdtextBox.Text);
 
-            Genero.Buscar(idP);
-            DescripcionGenerotextBox.Text = Genero.Descripcion.ToString();
-        }
-
-        private void Modificarbutton_Click(object sender, EventArgs e)
-        {
-
-            
+            Autor.Buscar(idP);
+            NombreAutorestextBox.Text = Autor.NombreAutores.ToString();
         }
     }
 }
