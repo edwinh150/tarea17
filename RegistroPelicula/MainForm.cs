@@ -17,6 +17,7 @@ namespace RegistroPelicula
         Peliculas peliculaC = new Peliculas();
         Generos genero = new Generos();
         Autores autor = new Autores();
+        Estudios estudio = new Estudios();
 
         public string ruta;
 
@@ -35,6 +36,29 @@ namespace RegistroPelicula
                 AutorescomboBox.Items.Add(autor.Listado(" * ", "1=1", "").Rows[i]["Nombre"]);
             }
 
+            for (int i = 0; i < estudio.Listado(" * ", "1=1", "").Rows.Count; i++)
+            {
+                EstudiocomboBox.Items.Add(estudio.Listado(" * ", "1=1", "").Rows[i]["Nombre"]);
+            }
+
+        }
+
+        private void limpiar()
+        {
+            PeliculaIdtextBox.Clear();
+            TitulotextBox.Clear();
+            DescripciontextBox.Clear();
+            AnocomboBox.Text = "";
+            CalificaciontextBox.Clear();
+            IMDBtextBox.Clear();
+            CategoriacomboBox.Text = "";
+            RutatextBox.Clear();
+            PortadapictureBox.ImageLocation = "";
+            GenerocomboBox.Text = "";
+            EstudiocomboBox.Text = "";
+            AutorescomboBox.Text = "";
+            AutoreslistBox.Text = "";
+            GenerolistBox.Text = "";
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,7 +148,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                       // ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "CategoriaId");
+                       ResultadodataGridView.DataSource = peli.Listado(" * ", "CategoriaId = " + ConsultartextBox.Text, "");
 
                     }
                     catch (Exception ex)
@@ -137,7 +161,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                        //ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Genero");
+                       ResultadodataGridView.DataSource = peli.Listado(" * ", "Genero = " + ConsultartextBox.Text, "");
 
                     }
                     catch (Exception ex)
@@ -150,7 +174,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                       // ResultadodataGridView.DataSource = peli.Listado(ConsultartextBox.Text, "Ano");
+                       ResultadodataGridView.DataSource = peli.Listado(" * ", "Ano = " + ConsultartextBox.Text, "");
 
                     }
                     catch (Exception ex)
@@ -191,26 +215,13 @@ namespace RegistroPelicula
 
                         peliculaC.Genero = GenerolistBox.Text;
 
-                        peliculaC.Estudio = EstudiotextBox.Text;
+                        peliculaC.Estudio = EstudiocomboBox.Text;
 
                         peliculaC.Autor = AutoreslistBox.Text;
 
                         peliculaC.Editar(id);
 
                         MessageBox.Show("Se modifico correctamente");
-
-                        TitulotextBox.Clear();
-                        DescripciontextBox.Clear();
-                        AnocomboBox.Text = "";
-                        CalificaciontextBox.Clear();
-                        IMDBtextBox.Clear();
-                        CategoriacomboBox.Text = "";
-                        RutatextBox.Clear();
-                        GenerocomboBox.Text = "";
-                        EstudiotextBox.Clear();
-                        AutorescomboBox.Text = "";
-                        AutoreslistBox.Text = "";
-                        GenerolistBox.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -240,7 +251,7 @@ namespace RegistroPelicula
 
                     peliculaC.Genero = GenerolistBox.Text;
 
-                    peliculaC.Estudio = EstudiotextBox.Text;
+                    peliculaC.Estudio = EstudiocomboBox.Text;
 
                     peliculaC.Autor = AutoreslistBox.Text;
 
@@ -248,24 +259,14 @@ namespace RegistroPelicula
 
                     MessageBox.Show("Se guardo correctamente");
 
-                    TitulotextBox.Clear();
-                    DescripciontextBox.Clear();
-                    AnocomboBox.Text = "";
-                    CalificaciontextBox.Clear();
-                    IMDBtextBox.Clear();
-                    CategoriacomboBox.Text = "";
-                    RutatextBox.Clear();
-                    GenerocomboBox.Text = "";
-                    EstudiotextBox.Clear();
-                    AutorescomboBox.Text = "";
-                    AutoreslistBox.Text = "";
-                    GenerolistBox.Text = "";
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }           
+            }
+            limpiar();           
         }
 
         private void limpiarbutton_Click(object sender, EventArgs e)
@@ -314,19 +315,7 @@ namespace RegistroPelicula
                     peliculaC.Eliminar();
 
                     MessageBox.Show("Se Borro correctamente");
-                    PeliculaIdtextBox.Clear();
-                    TitulotextBox.Clear();
-                    DescripciontextBox.Clear();
-                    AnocomboBox.Text = "";
-                    CalificaciontextBox.Clear();
-                    IMDBtextBox.Clear();
-                    CategoriacomboBox.Text = "";
-                    RutatextBox.Clear();
-                    GenerocomboBox.Text = "";
-                    EstudiotextBox.Clear();
-                    AutorescomboBox.Text = "";
-                    AutoreslistBox.Text = "";
-                    GenerolistBox.Text = "";
+                    limpiar();
 
                 }
                 catch (Exception ex)
@@ -334,6 +323,7 @@ namespace RegistroPelicula
                     MessageBox.Show(ex.Message);
                 }
             }
+            limpiar();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -352,27 +342,20 @@ namespace RegistroPelicula
                 RutatextBox.Text = peliculaC.RutadePelicula;
                 PortadapictureBox.ImageLocation = peliculaC.RutadeImagen;
                 GenerolistBox.Items.Add(peliculaC.Genero);
-                EstudiotextBox.Text = peliculaC.Estudio;
+                EstudiocomboBox.Text = peliculaC.Estudio;
                 AutoreslistBox.Items.Add(peliculaC.Autor);
                 
             }
             else
             {
-                MessageBox.Show("Ingrese Id");
+                MessageBox.Show("Primero Ingrese un Id");
             }
             
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            TitulotextBox.Clear();
-            DescripciontextBox.Clear();
-            AnocomboBox.Text = "";
-            CalificaciontextBox.Clear();
-            IMDBtextBox.Clear();
-            CategoriacomboBox.Text = "";
-            RutatextBox.Clear();
-            GenerolistBox.Text = "";
+            limpiar();
         }
 
         private void Reproducirbutton_Click(object sender, EventArgs e)
@@ -406,6 +389,19 @@ namespace RegistroPelicula
             AutorForm autor = new AutorForm();
 
             autor.Show();   
+        }
+
+        private void agregarEstudioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstudioForm estudio = new EstudioForm();
+
+            estudio.Show();
+        }
+
+        private void AgregarAutoresbutton_Click(object sender, EventArgs e)
+        {
+             AutoreslistBox.Items.Add(AutorescomboBox.Text);
+            AutorescomboBox.Text = "";
         }
     }
 }

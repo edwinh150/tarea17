@@ -23,5 +23,10 @@ namespace RegistroPelicula
         {
             ReproductoraxWindowsMediaPlayer.URL = mn.ruta;
         }
+
+        private void Playbutton_Click(object sender, EventArgs e)
+        {
+            ReproductoraxWindowsMediaPlayer.Ctlcontrols.play();
+        }
     }
 }

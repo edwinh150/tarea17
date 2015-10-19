@@ -92,10 +92,19 @@ namespace RegistroPelicula
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            int idP = Convert.ToInt32(AutoresIdtextBox.Text);
+            if (AutoresIdtextBox.Text.Length > 0)
+            {
+                int idP = Convert.ToInt32(AutoresIdtextBox.Text);
 
-            Autor.Buscar(idP);
-            NombreAutorestextBox.Text = Autor.NombreAutores.ToString();
+                Autor.Buscar(idP);
+                NombreAutorestextBox.Text = Autor.NombreAutores.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese primero un Id");
+                AutoresIdtextBox.Clear();
+            }
+
         }
     }
 }

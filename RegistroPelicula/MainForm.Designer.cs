@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +40,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.AutorescomboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.EstudiotextBox = new System.Windows.Forms.TextBox();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -80,9 +74,15 @@
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.ConsultartextBox = new System.Windows.Forms.TextBox();
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
+            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarAutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EstudiocomboBox = new System.Windows.Forms.ComboBox();
+            this.agregarEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).BeginInit();
@@ -90,6 +90,7 @@
             this.tabPage2.SuspendLayout();
             this.ConsultargroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -105,47 +106,13 @@
             this.tabControl1.Size = new System.Drawing.Size(1080, 642);
             this.tabControl1.TabIndex = 7;
             // 
-            // openFileDialogImagen
-            // 
-            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
-            // 
-            // openFileDialogPeliculaV
-            // 
-            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.peliculasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // peliculasToolStripMenuItem
-            // 
-            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarGeneroToolStripMenuItem,
-            this.agregarAutoresToolStripMenuItem});
-            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // agregarGeneroToolStripMenuItem
-            // 
-            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
-            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
-            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::RegistroPelicula.Properties.Resources.tiras_de_pelicula_17_1122222402;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.EstudiocomboBox);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.EstudiotextBox);
             this.tabPage1.Controls.Add(this.AnocomboBox);
             this.tabPage1.Controls.Add(this.Rutabutton);
             this.tabPage1.Controls.Add(this.Buscarbutton);
@@ -245,6 +212,7 @@
             this.AgregarAutoresbutton.TabIndex = 26;
             this.AgregarAutoresbutton.Text = "Agregar";
             this.AgregarAutoresbutton.UseVisualStyleBackColor = true;
+            this.AgregarAutoresbutton.Click += new System.EventHandler(this.AgregarAutoresbutton_Click);
             // 
             // label6
             // 
@@ -275,13 +243,6 @@
             this.label7.Size = new System.Drawing.Size(55, 15);
             this.label7.TabIndex = 29;
             this.label7.Text = "Estudio";
-            // 
-            // EstudiotextBox
-            // 
-            this.EstudiotextBox.Location = new System.Drawing.Point(351, 294);
-            this.EstudiotextBox.Name = "EstudiotextBox";
-            this.EstudiotextBox.Size = new System.Drawing.Size(298, 20);
-            this.EstudiotextBox.TabIndex = 28;
             // 
             // AnocomboBox
             // 
@@ -365,7 +326,7 @@
             "2015"});
             this.AnocomboBox.Location = new System.Drawing.Point(351, 349);
             this.AnocomboBox.Name = "AnocomboBox";
-            this.AnocomboBox.Size = new System.Drawing.Size(210, 21);
+            this.AnocomboBox.Size = new System.Drawing.Size(224, 21);
             this.AnocomboBox.TabIndex = 20;
             // 
             // Rutabutton
@@ -413,7 +374,7 @@
             "Adulto"});
             this.CategoriacomboBox.Location = new System.Drawing.Point(351, 394);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
-            this.CategoriacomboBox.Size = new System.Drawing.Size(210, 21);
+            this.CategoriacomboBox.Size = new System.Drawing.Size(224, 21);
             this.CategoriacomboBox.TabIndex = 16;
             // 
             // label5
@@ -739,12 +700,63 @@
             this.ResultadodataGridView.TabIndex = 3;
             this.ResultadodataGridView.Tag = "";
             // 
+            // openFileDialogImagen
+            // 
+            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
+            // 
+            // openFileDialogPeliculaV
+            // 
+            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peliculasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // peliculasToolStripMenuItem
+            // 
+            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarGeneroToolStripMenuItem,
+            this.agregarAutoresToolStripMenuItem,
+            this.agregarEstudioToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Text = "Peliculas";
+            // 
+            // agregarGeneroToolStripMenuItem
+            // 
+            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
+            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
+            // 
             // agregarAutoresToolStripMenuItem
             // 
             this.agregarAutoresToolStripMenuItem.Name = "agregarAutoresToolStripMenuItem";
             this.agregarAutoresToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.agregarAutoresToolStripMenuItem.Text = "Agregar Autores";
             this.agregarAutoresToolStripMenuItem.Click += new System.EventHandler(this.agregarAutoresToolStripMenuItem_Click);
+            // 
+            // EstudiocomboBox
+            // 
+            this.EstudiocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EstudiocomboBox.FormattingEnabled = true;
+            this.EstudiocomboBox.Location = new System.Drawing.Point(351, 299);
+            this.EstudiocomboBox.Name = "EstudiocomboBox";
+            this.EstudiocomboBox.Size = new System.Drawing.Size(224, 21);
+            this.EstudiocomboBox.TabIndex = 28;
+            // 
+            // agregarEstudioToolStripMenuItem
+            // 
+            this.agregarEstudioToolStripMenuItem.Name = "agregarEstudioToolStripMenuItem";
+            this.agregarEstudioToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarEstudioToolStripMenuItem.Text = "Agregar Estudio";
+            this.agregarEstudioToolStripMenuItem.Click += new System.EventHandler(this.agregarEstudioToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -761,8 +773,6 @@
             this.Text = "Peliculas Al Instante";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -774,6 +784,8 @@
             this.ConsultargroupBox.ResumeLayout(false);
             this.ConsultargroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,8 +843,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox AutorescomboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox EstudiotextBox;
         private System.Windows.Forms.ToolStripMenuItem agregarAutoresToolStripMenuItem;
+        private System.Windows.Forms.ComboBox EstudiocomboBox;
+        private System.Windows.Forms.ToolStripMenuItem agregarEstudioToolStripMenuItem;
     }
 }
 

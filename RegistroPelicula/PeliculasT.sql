@@ -33,10 +33,16 @@ create table PeliculasT (
   Nombre varchar(100)
   );
 
+  create table Estudios (
+  EstudiosId int identity(1,1),
+  Nombre varchar(100)
+  );
 
   select * from Generos
 
   select * from Autores
+
+  select * from Estudios
 
   Insert Into Generos (Descripcion) Values ('Aventura')
 

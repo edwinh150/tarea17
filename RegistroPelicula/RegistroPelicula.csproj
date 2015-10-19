@@ -52,6 +52,12 @@
     <Compile Include="AutorForm.Designer.cs">
       <DependentUpon>AutorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstudioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstudioForm.Designer.cs">
+      <DependentUpon>EstudioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="AutorForm.resx">
       <DependentUpon>AutorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstudioForm.resx">
+      <DependentUpon>EstudioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneroForm.resx">
       <DependentUpon>GeneroForm.cs</DependentUpon>
