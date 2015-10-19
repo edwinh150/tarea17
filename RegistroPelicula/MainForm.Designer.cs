@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.AgregarGenerobutton = new System.Windows.Forms.Button();
             this.GenerocomboBox = new System.Windows.Forms.ComboBox();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
@@ -71,14 +67,28 @@
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.ConsultartextBox = new System.Windows.Forms.TextBox();
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
+            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GenerolistBox = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AutorescomboBox = new System.Windows.Forms.ComboBox();
+            this.AgregarAutoresbutton = new System.Windows.Forms.Button();
+            this.AutoreslistBox = new System.Windows.Forms.ListBox();
+            this.EstudiotextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.ConsultargroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,47 +101,16 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1065, 548);
+            this.tabControl1.Size = new System.Drawing.Size(1080, 642);
             this.tabControl1.TabIndex = 7;
-            // 
-            // openFileDialogImagen
-            // 
-            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
-            // 
-            // openFileDialogPeliculaV
-            // 
-            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.peliculasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1065, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // peliculasToolStripMenuItem
-            // 
-            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarGeneroToolStripMenuItem});
-            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // agregarGeneroToolStripMenuItem
-            // 
-            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
-            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
-            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
             // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::RegistroPelicula.Properties.Resources.tiras_de_pelicula_17_1122222402;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.GenerocomboBox);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.EstudiotextBox);
             this.tabPage1.Controls.Add(this.AnocomboBox);
             this.tabPage1.Controls.Add(this.Rutabutton);
             this.tabPage1.Controls.Add(this.Buscarbutton);
@@ -141,7 +120,6 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.RutatextBox);
             this.tabPage1.Controls.Add(this.PortadapictureBox);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.Nuevobutton);
             this.tabPage1.Controls.Add(this.PeliculaIdtextBox);
             this.tabPage1.Controls.Add(this.label2);
@@ -158,17 +136,28 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1057, 522);
+            this.tabPage1.Size = new System.Drawing.Size(1072, 616);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // AgregarGenerobutton
+            // 
+            this.AgregarGenerobutton.Location = new System.Drawing.Point(146, 38);
+            this.AgregarGenerobutton.Name = "AgregarGenerobutton";
+            this.AgregarGenerobutton.Size = new System.Drawing.Size(54, 23);
+            this.AgregarGenerobutton.TabIndex = 22;
+            this.AgregarGenerobutton.Text = "Agregar";
+            this.AgregarGenerobutton.UseVisualStyleBackColor = true;
+            this.AgregarGenerobutton.Click += new System.EventHandler(this.AgregarGenerobutton_Click);
+            // 
             // GenerocomboBox
             // 
+            this.GenerocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenerocomboBox.FormattingEnabled = true;
-            this.GenerocomboBox.Location = new System.Drawing.Point(773, 316);
+            this.GenerocomboBox.Location = new System.Drawing.Point(18, 38);
             this.GenerocomboBox.Name = "GenerocomboBox";
-            this.GenerocomboBox.Size = new System.Drawing.Size(181, 21);
+            this.GenerocomboBox.Size = new System.Drawing.Size(122, 21);
             this.GenerocomboBox.TabIndex = 21;
             // 
             // AnocomboBox
@@ -251,14 +240,14 @@
             "2013",
             "2014",
             "2015"});
-            this.AnocomboBox.Location = new System.Drawing.Point(351, 289);
+            this.AnocomboBox.Location = new System.Drawing.Point(351, 349);
             this.AnocomboBox.Name = "AnocomboBox";
             this.AnocomboBox.Size = new System.Drawing.Size(210, 21);
             this.AnocomboBox.TabIndex = 20;
             // 
             // Rutabutton
             // 
-            this.Rutabutton.Location = new System.Drawing.Point(292, 358);
+            this.Rutabutton.Location = new System.Drawing.Point(292, 392);
             this.Rutabutton.Name = "Rutabutton";
             this.Rutabutton.Size = new System.Drawing.Size(22, 23);
             this.Rutabutton.TabIndex = 19;
@@ -270,7 +259,7 @@
             // 
             this.Buscarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590159_system_search;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(842, 391);
+            this.Buscarbutton.Location = new System.Drawing.Point(842, 464);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(83, 39);
             this.Buscarbutton.TabIndex = 18;
@@ -283,7 +272,7 @@
             // 
             this.Eliminarbutton.Image = global::RegistroPelicula.Properties.Resources._1444618207_edit_delete;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(931, 391);
+            this.Eliminarbutton.Location = new System.Drawing.Point(931, 464);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 39);
             this.Eliminarbutton.TabIndex = 17;
@@ -306,7 +295,7 @@
             "Infantil",
             "Historico",
             "Suspenso"});
-            this.CategoriacomboBox.Location = new System.Drawing.Point(351, 334);
+            this.CategoriacomboBox.Location = new System.Drawing.Point(351, 394);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(210, 21);
             this.CategoriacomboBox.TabIndex = 16;
@@ -327,7 +316,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(84, 342);
+            this.label4.Location = new System.Drawing.Point(84, 376);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 15);
             this.label4.TabIndex = 13;
@@ -335,7 +324,7 @@
             // 
             // RutatextBox
             // 
-            this.RutatextBox.Location = new System.Drawing.Point(87, 360);
+            this.RutatextBox.Location = new System.Drawing.Point(87, 394);
             this.RutatextBox.Name = "RutatextBox";
             this.RutatextBox.Size = new System.Drawing.Size(199, 20);
             this.RutatextBox.TabIndex = 12;
@@ -349,7 +338,7 @@
             this.PortadapictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PortadapictureBox.Location = new System.Drawing.Point(87, 139);
             this.PortadapictureBox.Name = "PortadapictureBox";
-            this.PortadapictureBox.Size = new System.Drawing.Size(199, 168);
+            this.PortadapictureBox.Size = new System.Drawing.Size(214, 231);
             this.PortadapictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PortadapictureBox.TabIndex = 11;
             this.PortadapictureBox.TabStop = false;
@@ -359,7 +348,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(770, 289);
+            this.label3.Location = new System.Drawing.Point(16, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 3;
@@ -369,7 +358,7 @@
             // 
             this.Nuevobutton.Image = global::RegistroPelicula.Properties.Resources._1444590269_1;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(566, 391);
+            this.Nuevobutton.Location = new System.Drawing.Point(566, 464);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 39);
             this.Nuevobutton.TabIndex = 9;
@@ -382,7 +371,7 @@
             // 
             this.PeliculaIdtextBox.Location = new System.Drawing.Point(351, 155);
             this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
-            this.PeliculaIdtextBox.Size = new System.Drawing.Size(315, 20);
+            this.PeliculaIdtextBox.Size = new System.Drawing.Size(298, 20);
             this.PeliculaIdtextBox.TabIndex = 7;
             this.PeliculaIdtextBox.TextChanged += new System.EventHandler(this.PeliculaIdtextBox_TextChanged);
             // 
@@ -401,7 +390,7 @@
             // 
             this.Modificarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590127_edit_find_replace;
             this.Modificarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton.Location = new System.Drawing.Point(655, 391);
+            this.Modificarbutton.Location = new System.Drawing.Point(655, 464);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(92, 39);
             this.Modificarbutton.TabIndex = 6;
@@ -416,7 +405,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(408, 88);
+            this.label1.Location = new System.Drawing.Point(408, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 18);
             this.label1.TabIndex = 4;
@@ -426,14 +415,14 @@
             // 
             this.TitulotextBox.Location = new System.Drawing.Point(351, 197);
             this.TitulotextBox.Name = "TitulotextBox";
-            this.TitulotextBox.Size = new System.Drawing.Size(315, 20);
+            this.TitulotextBox.Size = new System.Drawing.Size(298, 20);
             this.TitulotextBox.TabIndex = 0;
             // 
             // DescripciontextBox
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(351, 243);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(315, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(298, 20);
             this.DescripciontextBox.TabIndex = 0;
             // 
             // groupBox1
@@ -443,9 +432,9 @@
             this.groupBox1.Controls.Add(this.Calabel);
             this.groupBox1.Controls.Add(this.IMDBtextBox);
             this.groupBox1.Controls.Add(this.CalificaciontextBox);
-            this.groupBox1.Location = new System.Drawing.Point(754, 146);
+            this.groupBox1.Location = new System.Drawing.Point(696, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 126);
+            this.groupBox1.Size = new System.Drawing.Size(329, 126);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puntuacion";
@@ -454,7 +443,7 @@
             // 
             this.Imlabel.AutoSize = true;
             this.Imlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Imlabel.Location = new System.Drawing.Point(16, 14);
+            this.Imlabel.Location = new System.Drawing.Point(72, 16);
             this.Imlabel.Name = "Imlabel";
             this.Imlabel.Size = new System.Drawing.Size(138, 15);
             this.Imlabel.TabIndex = 2;
@@ -464,7 +453,7 @@
             // 
             this.Calabel.AutoSize = true;
             this.Calabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Calabel.Location = new System.Drawing.Point(16, 67);
+            this.Calabel.Location = new System.Drawing.Point(72, 69);
             this.Calabel.Name = "Calabel";
             this.Calabel.Size = new System.Drawing.Size(82, 15);
             this.Calabel.TabIndex = 2;
@@ -472,14 +461,14 @@
             // 
             // IMDBtextBox
             // 
-            this.IMDBtextBox.Location = new System.Drawing.Point(19, 29);
+            this.IMDBtextBox.Location = new System.Drawing.Point(75, 31);
             this.IMDBtextBox.Name = "IMDBtextBox";
             this.IMDBtextBox.Size = new System.Drawing.Size(181, 20);
             this.IMDBtextBox.TabIndex = 0;
             // 
             // CalificaciontextBox
             // 
-            this.CalificaciontextBox.Location = new System.Drawing.Point(19, 83);
+            this.CalificaciontextBox.Location = new System.Drawing.Point(75, 85);
             this.CalificaciontextBox.Name = "CalificaciontextBox";
             this.CalificaciontextBox.Size = new System.Drawing.Size(181, 20);
             this.CalificaciontextBox.TabIndex = 0;
@@ -489,7 +478,7 @@
             this.CIlabel.AutoSize = true;
             this.CIlabel.BackColor = System.Drawing.Color.Transparent;
             this.CIlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CIlabel.Location = new System.Drawing.Point(351, 316);
+            this.CIlabel.Location = new System.Drawing.Point(351, 376);
             this.CIlabel.Name = "CIlabel";
             this.CIlabel.Size = new System.Drawing.Size(69, 15);
             this.CIlabel.TabIndex = 2;
@@ -499,7 +488,7 @@
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(753, 391);
+            this.Guardarbutton.Location = new System.Drawing.Point(753, 464);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 39);
             this.Guardarbutton.TabIndex = 1;
@@ -524,7 +513,7 @@
             this.Alabel.AutoSize = true;
             this.Alabel.BackColor = System.Drawing.Color.Transparent;
             this.Alabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Alabel.Location = new System.Drawing.Point(351, 266);
+            this.Alabel.Location = new System.Drawing.Point(351, 326);
             this.Alabel.Name = "Alabel";
             this.Alabel.Size = new System.Drawing.Size(31, 15);
             this.Alabel.TabIndex = 2;
@@ -644,13 +633,124 @@
             this.ResultadodataGridView.TabIndex = 3;
             this.ResultadodataGridView.Tag = "";
             // 
+            // openFileDialogImagen
+            // 
+            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
+            // 
+            // openFileDialogPeliculaV
+            // 
+            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peliculasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // peliculasToolStripMenuItem
+            // 
+            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarGeneroToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Text = "Peliculas";
+            // 
+            // agregarGeneroToolStripMenuItem
+            // 
+            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
+            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
+            // 
+            // GenerolistBox
+            // 
+            this.GenerolistBox.FormattingEnabled = true;
+            this.GenerolistBox.Location = new System.Drawing.Point(206, 38);
+            this.GenerolistBox.Name = "GenerolistBox";
+            this.GenerolistBox.Size = new System.Drawing.Size(114, 30);
+            this.GenerolistBox.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Autores";
+            // 
+            // AutorescomboBox
+            // 
+            this.AutorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AutorescomboBox.FormattingEnabled = true;
+            this.AutorescomboBox.Location = new System.Drawing.Point(19, 99);
+            this.AutorescomboBox.Name = "AutorescomboBox";
+            this.AutorescomboBox.Size = new System.Drawing.Size(122, 21);
+            this.AutorescomboBox.TabIndex = 25;
+            // 
+            // AgregarAutoresbutton
+            // 
+            this.AgregarAutoresbutton.Location = new System.Drawing.Point(147, 100);
+            this.AgregarAutoresbutton.Name = "AgregarAutoresbutton";
+            this.AgregarAutoresbutton.Size = new System.Drawing.Size(54, 23);
+            this.AgregarAutoresbutton.TabIndex = 26;
+            this.AgregarAutoresbutton.Text = "Agregar";
+            this.AgregarAutoresbutton.UseVisualStyleBackColor = true;
+            // 
+            // AutoreslistBox
+            // 
+            this.AutoreslistBox.FormattingEnabled = true;
+            this.AutoreslistBox.Location = new System.Drawing.Point(208, 100);
+            this.AutoreslistBox.Name = "AutoreslistBox";
+            this.AutoreslistBox.Size = new System.Drawing.Size(114, 30);
+            this.AutoreslistBox.TabIndex = 27;
+            // 
+            // EstudiotextBox
+            // 
+            this.EstudiotextBox.Location = new System.Drawing.Point(351, 294);
+            this.EstudiotextBox.Name = "EstudiotextBox";
+            this.EstudiotextBox.Size = new System.Drawing.Size(298, 20);
+            this.EstudiotextBox.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(351, 276);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 15);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Estudio";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.GenerocomboBox);
+            this.groupBox2.Controls.Add(this.AgregarGenerobutton);
+            this.groupBox2.Controls.Add(this.AutoreslistBox);
+            this.groupBox2.Controls.Add(this.GenerolistBox);
+            this.groupBox2.Controls.Add(this.AgregarAutoresbutton);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.AutorescomboBox);
+            this.groupBox2.Location = new System.Drawing.Point(696, 299);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(329, 142);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1065, 572);
+            this.ClientSize = new System.Drawing.Size(1080, 666);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -659,8 +759,6 @@
             this.Text = "Peliculas Al Instante";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).EndInit();
@@ -670,6 +768,10 @@
             this.ConsultargroupBox.ResumeLayout(false);
             this.ConsultargroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,6 +821,15 @@
         private System.Windows.Forms.ToolStripMenuItem peliculasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarGeneroToolStripMenuItem;
         private System.Windows.Forms.Button Limpiarbutton;
+        private System.Windows.Forms.Button AgregarGenerobutton;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox AutoreslistBox;
+        private System.Windows.Forms.ListBox GenerolistBox;
+        private System.Windows.Forms.Button AgregarAutoresbutton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox AutorescomboBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox EstudiotextBox;
     }
 }
 
