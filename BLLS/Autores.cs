@@ -30,16 +30,27 @@ namespace BLLS
 
         public override bool Buscar(int IdBuscado)
         {
-            bool retorno = false;
+            ConexionDb con = new ConexionDb();
+            DataTable dt = new DataTable();
 
-            con.Ejecutar(string.Format("update Autores set Nombre = '{0}' where AutoresId = '{1}'", this.NombreAutores, IdBuscado));
+            dt = con.ObtenerDatos(string.Format("select * from Autores where AutoresId = '{0}' ", IdBuscado));
+            if (dt.Rows.Count > 0)
+            {
 
-            return retorno;
+                this.NombreAutores = dt.Rows[0]["Nombre"].ToString();
+
+            }
+
+            return dt.Rows.Count > 0;
         }
 
         public override bool Editar(int id)
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+
+            con.Ejecutar(string.Format("update Autores set Nombre = '{0}' where AutoresId = '{1}'", this.NombreAutores, id));
+
+            return retorno;
         }
 
         public override bool Eliminar()
