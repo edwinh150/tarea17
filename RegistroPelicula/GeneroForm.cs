@@ -83,6 +83,7 @@ namespace RegistroPelicula
 
                     MessageBox.Show("Se Borro correctamente");
                     GeneroIdtextBox.Clear();
+                    DescripcionGenerotextBox.Clear();
                 }
                 catch (Exception ex)
                 {

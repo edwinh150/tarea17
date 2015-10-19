@@ -59,6 +59,8 @@ namespace RegistroPelicula
                     MessageBox.Show(ex.Message);
                 }
             }
+            AutoresIdtextBox.Clear();
+            NombreAutorestextBox.Clear();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -78,13 +80,14 @@ namespace RegistroPelicula
                     Autor.Eliminar();
 
                     MessageBox.Show("Se Borro correctamente");
-                    AutoresIdtextBox.Clear();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+            AutoresIdtextBox.Clear();
+            NombreAutorestextBox.Clear();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)

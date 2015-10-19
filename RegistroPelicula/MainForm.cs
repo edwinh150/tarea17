@@ -16,6 +16,8 @@ namespace RegistroPelicula
     {
         Peliculas peliculaC = new Peliculas();
         Generos genero = new Generos();
+        Autores autor = new Autores();
+
         public string ruta;
 
 
@@ -27,7 +29,12 @@ namespace RegistroPelicula
             {
                 GenerocomboBox.Items.Add(genero.Listado(" * ", "1=1", "").Rows[i]["Descripcion"]);
             }
-            
+
+            for (int i = 0; i < autor.Listado(" * ", "1=1", "").Rows.Count; i++)
+            {
+                AutorescomboBox.Items.Add(autor.Listado(" * ", "1=1", "").Rows[i]["Nombre"]);
+            }
+
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -199,6 +206,11 @@ namespace RegistroPelicula
                         IMDBtextBox.Clear();
                         CategoriacomboBox.Text = "";
                         RutatextBox.Clear();
+                        GenerocomboBox.Text = "";
+                        EstudiotextBox.Clear();
+                        AutorescomboBox.Text = "";
+                        AutoreslistBox.Text = "";
+                        GenerolistBox.Text = "";
                     }
                     catch (Exception ex)
                     {
@@ -243,6 +255,11 @@ namespace RegistroPelicula
                     IMDBtextBox.Clear();
                     CategoriacomboBox.Text = "";
                     RutatextBox.Clear();
+                    GenerocomboBox.Text = "";
+                    EstudiotextBox.Clear();
+                    AutorescomboBox.Text = "";
+                    AutoreslistBox.Text = "";
+                    GenerolistBox.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -298,6 +315,19 @@ namespace RegistroPelicula
 
                     MessageBox.Show("Se Borro correctamente");
                     PeliculaIdtextBox.Clear();
+                    TitulotextBox.Clear();
+                    DescripciontextBox.Clear();
+                    AnocomboBox.Text = "";
+                    CalificaciontextBox.Clear();
+                    IMDBtextBox.Clear();
+                    CategoriacomboBox.Text = "";
+                    RutatextBox.Clear();
+                    GenerocomboBox.Text = "";
+                    EstudiotextBox.Clear();
+                    AutorescomboBox.Text = "";
+                    AutoreslistBox.Text = "";
+                    GenerolistBox.Text = "";
+
                 }
                 catch (Exception ex)
                 {
@@ -369,6 +399,13 @@ namespace RegistroPelicula
         {
             GenerolistBox.Items.Add(GenerocomboBox.Text);
             GenerocomboBox.Text = "";
+        }
+
+        private void agregarAutoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AutorForm autor = new AutorForm();
+
+            autor.Show();   
         }
     }
 }

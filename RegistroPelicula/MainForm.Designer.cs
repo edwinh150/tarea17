@@ -29,9 +29,23 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.AgregarGenerobutton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.GenerocomboBox = new System.Windows.Forms.ComboBox();
+            this.AgregarGenerobutton = new System.Windows.Forms.Button();
+            this.AutoreslistBox = new System.Windows.Forms.ListBox();
+            this.GenerolistBox = new System.Windows.Forms.ListBox();
+            this.AgregarAutoresbutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AutorescomboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.EstudiotextBox = new System.Windows.Forms.TextBox();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
@@ -41,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.RutatextBox = new System.Windows.Forms.TextBox();
             this.PortadapictureBox = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.PeliculaIdtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,28 +80,16 @@
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.ConsultartextBox = new System.Windows.Forms.TextBox();
             this.ResultadodataGridView = new System.Windows.Forms.DataGridView();
-            this.openFileDialogImagen = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialogPeliculaV = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GenerolistBox = new System.Windows.Forms.ListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AutorescomboBox = new System.Windows.Forms.ComboBox();
-            this.AgregarAutoresbutton = new System.Windows.Forms.Button();
-            this.AutoreslistBox = new System.Windows.Forms.ListBox();
-            this.EstudiotextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.agregarAutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.ConsultargroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -103,6 +104,40 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1080, 642);
             this.tabControl1.TabIndex = 7;
+            // 
+            // openFileDialogImagen
+            // 
+            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
+            // 
+            // openFileDialogPeliculaV
+            // 
+            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peliculasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // peliculasToolStripMenuItem
+            // 
+            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarGeneroToolStripMenuItem,
+            this.agregarAutoresToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Text = "Peliculas";
+            // 
+            // agregarGeneroToolStripMenuItem
+            // 
+            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
+            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
             // 
             // tabPage1
             // 
@@ -141,6 +176,41 @@
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.GenerocomboBox);
+            this.groupBox2.Controls.Add(this.AgregarGenerobutton);
+            this.groupBox2.Controls.Add(this.AutoreslistBox);
+            this.groupBox2.Controls.Add(this.GenerolistBox);
+            this.groupBox2.Controls.Add(this.AgregarAutoresbutton);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.AutorescomboBox);
+            this.groupBox2.Location = new System.Drawing.Point(696, 299);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(329, 142);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Genero";
+            // 
+            // GenerocomboBox
+            // 
+            this.GenerocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GenerocomboBox.FormattingEnabled = true;
+            this.GenerocomboBox.Location = new System.Drawing.Point(18, 38);
+            this.GenerocomboBox.Name = "GenerocomboBox";
+            this.GenerocomboBox.Size = new System.Drawing.Size(122, 21);
+            this.GenerocomboBox.TabIndex = 21;
+            // 
             // AgregarGenerobutton
             // 
             this.AgregarGenerobutton.Location = new System.Drawing.Point(146, 38);
@@ -151,14 +221,67 @@
             this.AgregarGenerobutton.UseVisualStyleBackColor = true;
             this.AgregarGenerobutton.Click += new System.EventHandler(this.AgregarGenerobutton_Click);
             // 
-            // GenerocomboBox
+            // AutoreslistBox
             // 
-            this.GenerocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GenerocomboBox.FormattingEnabled = true;
-            this.GenerocomboBox.Location = new System.Drawing.Point(18, 38);
-            this.GenerocomboBox.Name = "GenerocomboBox";
-            this.GenerocomboBox.Size = new System.Drawing.Size(122, 21);
-            this.GenerocomboBox.TabIndex = 21;
+            this.AutoreslistBox.FormattingEnabled = true;
+            this.AutoreslistBox.Location = new System.Drawing.Point(208, 100);
+            this.AutoreslistBox.Name = "AutoreslistBox";
+            this.AutoreslistBox.Size = new System.Drawing.Size(114, 30);
+            this.AutoreslistBox.TabIndex = 27;
+            // 
+            // GenerolistBox
+            // 
+            this.GenerolistBox.FormattingEnabled = true;
+            this.GenerolistBox.Location = new System.Drawing.Point(206, 38);
+            this.GenerolistBox.Name = "GenerolistBox";
+            this.GenerolistBox.Size = new System.Drawing.Size(114, 30);
+            this.GenerolistBox.TabIndex = 23;
+            // 
+            // AgregarAutoresbutton
+            // 
+            this.AgregarAutoresbutton.Location = new System.Drawing.Point(147, 100);
+            this.AgregarAutoresbutton.Name = "AgregarAutoresbutton";
+            this.AgregarAutoresbutton.Size = new System.Drawing.Size(54, 23);
+            this.AgregarAutoresbutton.TabIndex = 26;
+            this.AgregarAutoresbutton.Text = "Agregar";
+            this.AgregarAutoresbutton.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Autores";
+            // 
+            // AutorescomboBox
+            // 
+            this.AutorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AutorescomboBox.FormattingEnabled = true;
+            this.AutorescomboBox.Location = new System.Drawing.Point(19, 99);
+            this.AutorescomboBox.Name = "AutorescomboBox";
+            this.AutorescomboBox.Size = new System.Drawing.Size(122, 21);
+            this.AutorescomboBox.TabIndex = 25;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(351, 276);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 15);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Estudio";
+            // 
+            // EstudiotextBox
+            // 
+            this.EstudiotextBox.Location = new System.Drawing.Point(351, 294);
+            this.EstudiotextBox.Name = "EstudiotextBox";
+            this.EstudiotextBox.Size = new System.Drawing.Size(298, 20);
+            this.EstudiotextBox.TabIndex = 28;
             // 
             // AnocomboBox
             // 
@@ -259,7 +382,7 @@
             // 
             this.Buscarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590159_system_search;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(842, 464);
+            this.Buscarbutton.Location = new System.Drawing.Point(859, 466);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(83, 39);
             this.Buscarbutton.TabIndex = 18;
@@ -272,7 +395,7 @@
             // 
             this.Eliminarbutton.Image = global::RegistroPelicula.Properties.Resources._1444618207_edit_delete;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(931, 464);
+            this.Eliminarbutton.Location = new System.Drawing.Point(948, 466);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 39);
             this.Eliminarbutton.TabIndex = 17;
@@ -286,15 +409,8 @@
             this.CategoriacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoriacomboBox.FormattingEnabled = true;
             this.CategoriacomboBox.Items.AddRange(new object[] {
-            "Aventura",
-            "Accion",
-            "Comedia",
-            "Terror",
-            "Romantica",
-            "Animacion",
             "Infantil",
-            "Historico",
-            "Suspenso"});
+            "Adulto"});
             this.CategoriacomboBox.Location = new System.Drawing.Point(351, 394);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(210, 21);
@@ -344,21 +460,11 @@
             this.PortadapictureBox.TabStop = false;
             this.PortadapictureBox.Click += new System.EventHandler(this.PortadapictureBox_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Genero";
-            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::RegistroPelicula.Properties.Resources._1444590269_1;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(566, 464);
+            this.Nuevobutton.Location = new System.Drawing.Point(583, 466);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 39);
             this.Nuevobutton.TabIndex = 9;
@@ -390,7 +496,7 @@
             // 
             this.Modificarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590127_edit_find_replace;
             this.Modificarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton.Location = new System.Drawing.Point(655, 464);
+            this.Modificarbutton.Location = new System.Drawing.Point(672, 466);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(92, 39);
             this.Modificarbutton.TabIndex = 6;
@@ -488,7 +594,7 @@
             // 
             this.Guardarbutton.Image = global::RegistroPelicula.Properties.Resources._1442212393_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(753, 464);
+            this.Guardarbutton.Location = new System.Drawing.Point(770, 466);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 39);
             this.Guardarbutton.TabIndex = 1;
@@ -540,7 +646,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1057, 522);
+            this.tabPage2.Size = new System.Drawing.Size(1072, 616);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consultar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -549,7 +655,7 @@
             // 
             this.Limpiarbutton.Image = global::RegistroPelicula.Properties.Resources._1442211594_edit_clear;
             this.Limpiarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Limpiarbutton.Location = new System.Drawing.Point(745, 485);
+            this.Limpiarbutton.Location = new System.Drawing.Point(762, 579);
             this.Limpiarbutton.Name = "Limpiarbutton";
             this.Limpiarbutton.Size = new System.Drawing.Size(149, 31);
             this.Limpiarbutton.TabIndex = 5;
@@ -561,7 +667,7 @@
             // 
             this.Reproducirbutton.Image = global::RegistroPelicula.Properties.Resources._1444618275_play_store;
             this.Reproducirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Reproducirbutton.Location = new System.Drawing.Point(900, 485);
+            this.Reproducirbutton.Location = new System.Drawing.Point(917, 579);
             this.Reproducirbutton.Name = "Reproducirbutton";
             this.Reproducirbutton.Size = new System.Drawing.Size(149, 31);
             this.Reproducirbutton.TabIndex = 5;
@@ -575,7 +681,7 @@
             this.ConsultargroupBox.Controls.Add(this.Consultarbutton);
             this.ConsultargroupBox.Controls.Add(this.ConsultartextBox);
             this.ConsultargroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultargroupBox.Location = new System.Drawing.Point(155, 6);
+            this.ConsultargroupBox.Location = new System.Drawing.Point(169, 6);
             this.ConsultargroupBox.Name = "ConsultargroupBox";
             this.ConsultargroupBox.Size = new System.Drawing.Size(742, 53);
             this.ConsultargroupBox.TabIndex = 4;
@@ -629,120 +735,16 @@
             this.ResultadodataGridView.Location = new System.Drawing.Point(10, 65);
             this.ResultadodataGridView.Name = "ResultadodataGridView";
             this.ResultadodataGridView.ReadOnly = true;
-            this.ResultadodataGridView.Size = new System.Drawing.Size(1039, 417);
+            this.ResultadodataGridView.Size = new System.Drawing.Size(1054, 511);
             this.ResultadodataGridView.TabIndex = 3;
             this.ResultadodataGridView.Tag = "";
             // 
-            // openFileDialogImagen
+            // agregarAutoresToolStripMenuItem
             // 
-            this.openFileDialogImagen.FileName = "openFileDialogImagenP";
-            // 
-            // openFileDialogPeliculaV
-            // 
-            this.openFileDialogPeliculaV.FileName = "openFileDialogPelicula";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.peliculasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1080, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // peliculasToolStripMenuItem
-            // 
-            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarGeneroToolStripMenuItem});
-            this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // agregarGeneroToolStripMenuItem
-            // 
-            this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
-            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
-            this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
-            // 
-            // GenerolistBox
-            // 
-            this.GenerolistBox.FormattingEnabled = true;
-            this.GenerolistBox.Location = new System.Drawing.Point(206, 38);
-            this.GenerolistBox.Name = "GenerolistBox";
-            this.GenerolistBox.Size = new System.Drawing.Size(114, 30);
-            this.GenerolistBox.TabIndex = 23;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 82);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Autores";
-            // 
-            // AutorescomboBox
-            // 
-            this.AutorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AutorescomboBox.FormattingEnabled = true;
-            this.AutorescomboBox.Location = new System.Drawing.Point(19, 99);
-            this.AutorescomboBox.Name = "AutorescomboBox";
-            this.AutorescomboBox.Size = new System.Drawing.Size(122, 21);
-            this.AutorescomboBox.TabIndex = 25;
-            // 
-            // AgregarAutoresbutton
-            // 
-            this.AgregarAutoresbutton.Location = new System.Drawing.Point(147, 100);
-            this.AgregarAutoresbutton.Name = "AgregarAutoresbutton";
-            this.AgregarAutoresbutton.Size = new System.Drawing.Size(54, 23);
-            this.AgregarAutoresbutton.TabIndex = 26;
-            this.AgregarAutoresbutton.Text = "Agregar";
-            this.AgregarAutoresbutton.UseVisualStyleBackColor = true;
-            // 
-            // AutoreslistBox
-            // 
-            this.AutoreslistBox.FormattingEnabled = true;
-            this.AutoreslistBox.Location = new System.Drawing.Point(208, 100);
-            this.AutoreslistBox.Name = "AutoreslistBox";
-            this.AutoreslistBox.Size = new System.Drawing.Size(114, 30);
-            this.AutoreslistBox.TabIndex = 27;
-            // 
-            // EstudiotextBox
-            // 
-            this.EstudiotextBox.Location = new System.Drawing.Point(351, 294);
-            this.EstudiotextBox.Name = "EstudiotextBox";
-            this.EstudiotextBox.Size = new System.Drawing.Size(298, 20);
-            this.EstudiotextBox.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(351, 276);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 15);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Estudio";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.GenerocomboBox);
-            this.groupBox2.Controls.Add(this.AgregarGenerobutton);
-            this.groupBox2.Controls.Add(this.AutoreslistBox);
-            this.groupBox2.Controls.Add(this.GenerolistBox);
-            this.groupBox2.Controls.Add(this.AgregarAutoresbutton);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.AutorescomboBox);
-            this.groupBox2.Location = new System.Drawing.Point(696, 299);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 142);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
+            this.agregarAutoresToolStripMenuItem.Name = "agregarAutoresToolStripMenuItem";
+            this.agregarAutoresToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarAutoresToolStripMenuItem.Text = "Agregar Autores";
+            this.agregarAutoresToolStripMenuItem.Click += new System.EventHandler(this.agregarAutoresToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -759,8 +761,12 @@
             this.Text = "Peliculas Al Instante";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PortadapictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -768,10 +774,6 @@
             this.ConsultargroupBox.ResumeLayout(false);
             this.ConsultargroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadodataGridView)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,6 +832,7 @@
         private System.Windows.Forms.ComboBox AutorescomboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox EstudiotextBox;
+        private System.Windows.Forms.ToolStripMenuItem agregarAutoresToolStripMenuItem;
     }
 }
 

@@ -36,6 +36,8 @@ create table PeliculasT (
 
   select * from Generos
 
+  select * from Autores
+
   Insert Into Generos (Descripcion) Values ('Aventura')
 
 
