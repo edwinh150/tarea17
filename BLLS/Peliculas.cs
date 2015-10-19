@@ -31,6 +31,10 @@ namespace BLLS
 
             public string RutadePelicula { get; set; }
 
+            public string Autor { get; set; }
+
+            public string Estudio { get; set; }
+
         public Peliculas()
             {
                 this.Titulo = "";
@@ -42,9 +46,11 @@ namespace BLLS
                 this.Genero = "";
                 this.RutadeImagen = "";
                 this.RutadePelicula = "";
+                this.Autor = "";
+                this.Estudio = "";
             }
 
-            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string GeneroS, string RutaI, string RutaP)
+            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string GeneroS, string RutaI, string RutaP, string AutorS, string EstudioS)
             {
                 this.Titulo = TituloS;
                 this.Descripcion = DescripcionS;
@@ -55,6 +61,8 @@ namespace BLLS
                 this.Genero = GeneroS;
                 this.RutadeImagen = RutaI;
                 this.RutadePelicula = RutaP;
+                this.Autor = AutorS;
+                this.Estudio = EstudioS;
             }
 
             public Peliculas(int peliculaid)
@@ -69,7 +77,7 @@ namespace BLLS
             ConexionDb conexion = new ConexionDb();
 
 
-            conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId,this.Genero, this.RutadeImagen, this.RutadePelicula));
+            conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId,this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio));
 
             return retorno;
         }
@@ -81,7 +89,7 @@ namespace BLLS
             ConexionDb conexion = new ConexionDb();
 
 
-            conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}' , RutadeImagen = '{9}' where  PeliculaId = '{10}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.RutadeImagen, this.RutadePelicula,this.RutadeImagen, id));
+            conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}', Autor = '{9}', Estudio = '{10}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.CategoriaId, this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio, id));
 
             return retorno;
         }
@@ -112,8 +120,11 @@ namespace BLLS
                 this.Calificacion = (int)dt.Rows[0]["Calificacion"];
                 this.IMDB = (int)dt.Rows[0]["IMDB"];
                 this.CategoriaId = dt.Rows[0]["CategoriaId"].ToString();
+                this.Genero = dt.Rows[0]["Genero"].ToString();
                 this.RutadePelicula = dt.Rows[0]["RutadePelicula"].ToString();
                 this.RutadeImagen = dt.Rows[0]["RutadeImagen"].ToString();
+                this.Autor = dt.Rows[0]["Autor"].ToString();
+                this.Estudio = dt.Rows[0]["Estudio"].ToString();
             }
 
             return dt.Rows.Count > 0;
