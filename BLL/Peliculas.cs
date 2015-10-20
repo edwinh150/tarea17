@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 
-namespace BLLS
+namespace BLL
 {
         // Capa de negocio ya creada
         public class Peliculas : ClaseMaestra

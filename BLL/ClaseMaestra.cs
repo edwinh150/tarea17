@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLLS
+namespace BLL
 {
     public abstract class ClaseMaestra
     {
