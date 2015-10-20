@@ -148,7 +148,7 @@ namespace RegistroPelicula
                 {
                     try
                     {
-                       ResultadodataGridView.DataSource = peli.Listado(" * ", "CategoriaId = " + ConsultartextBox.Text, "");
+                       ResultadodataGridView.DataSource = peli.Listado(" * ", "Categoria = " + ConsultartextBox.Text, "");
 
                     }
                     catch (Exception ex)
@@ -207,7 +207,7 @@ namespace RegistroPelicula
 
                         peliculaC.IMDB = Convert.ToInt32(IMDBtextBox.Text);
 
-                        peliculaC.CategoriaId = CategoriacomboBox.Text;
+                        peliculaC.Categoria = CategoriacomboBox.Text;
 
                         peliculaC.RutadeImagen = PortadapictureBox.ImageLocation;
 
@@ -243,7 +243,7 @@ namespace RegistroPelicula
 
                     peliculaC.IMDB = Convert.ToInt32(IMDBtextBox.Text);
 
-                    peliculaC.CategoriaId = CategoriacomboBox.Text;
+                    peliculaC.Categoria = CategoriacomboBox.Text;
 
                     peliculaC.RutadeImagen = PortadapictureBox.ImageLocation;
 
@@ -338,7 +338,7 @@ namespace RegistroPelicula
                 AnocomboBox.Text = peliculaC.Ano.ToString();
                 CalificaciontextBox.Text = peliculaC.Calificacion.ToString();
                 IMDBtextBox.Text = peliculaC.IMDB.ToString();
-                CategoriacomboBox.Text = peliculaC.CategoriaId;
+                CategoriacomboBox.Text = peliculaC.Categoria;
                 RutatextBox.Text = peliculaC.RutadePelicula;
                 PortadapictureBox.ImageLocation = peliculaC.RutadeImagen;
                 GenerolistBox.Items.Add(peliculaC.Genero);

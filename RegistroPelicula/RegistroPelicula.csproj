@@ -143,9 +143,9 @@
     <None Include="Resources\1444590269_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLLS\BLLS.csproj">
+    <ProjectReference Include="..\BLLS\BLL.csproj">
       <Project>{51e3e7c7-91ec-4055-9b98-7344e1a57e2c}</Project>
-      <Name>BLLS</Name>
+      <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{6696a0c1-3d3f-40dd-95c6-5ae29b01a9e1}</Project>
