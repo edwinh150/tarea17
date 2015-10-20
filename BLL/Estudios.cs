@@ -10,19 +10,19 @@ namespace BLLS
 {
    public class Estudios : ClaseMaestra
     {
-        public int EstudiosId { get; set; }
+        public int EstudioId { get; set; }
 
         public string NombreEstudio { get; set; }
 
         public Estudios()
         {
-            this.EstudiosId = 0;
+            this.EstudioId = 0;
             this.NombreEstudio = "";
         }
 
         public Estudios(int id, string nombreE)
         {
-            this.EstudiosId = id;
+            this.EstudioId = id;
             this.NombreEstudio = nombreE;
         }
 
@@ -52,7 +52,7 @@ namespace BLLS
         {
             bool retorno = false;
 
-            con.Ejecutar(string.Format("delete from Estudios where EstudiosId = '{0}' ", this.EstudiosId));
+            con.Ejecutar(string.Format("delete from Estudios where EstudiosId = '{0}' ", this.EstudioId));
 
             return retorno;
         }

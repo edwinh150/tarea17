@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.EstudiocomboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.GenerocomboBox = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.PeliculaIdtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Modificarbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TitulotextBox = new System.Windows.Forms.TextBox();
             this.DescripciontextBox = new System.Windows.Forms.TextBox();
@@ -80,7 +80,6 @@
             this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarAutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.EstudiocomboBox = new System.Windows.Forms.ComboBox();
             this.agregarEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -125,7 +124,6 @@
             this.tabPage1.Controls.Add(this.Nuevobutton);
             this.tabPage1.Controls.Add(this.PeliculaIdtextBox);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.Modificarbutton);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.TitulotextBox);
             this.tabPage1.Controls.Add(this.DescripciontextBox);
@@ -142,6 +140,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // EstudiocomboBox
+            // 
+            this.EstudiocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EstudiocomboBox.FormattingEnabled = true;
+            this.EstudiocomboBox.Location = new System.Drawing.Point(351, 299);
+            this.EstudiocomboBox.Name = "EstudiocomboBox";
+            this.EstudiocomboBox.Size = new System.Drawing.Size(224, 21);
+            this.EstudiocomboBox.TabIndex = 28;
             // 
             // groupBox2
             // 
@@ -425,7 +432,7 @@
             // 
             this.Nuevobutton.Image = global::RegistroPelicula.Properties.Resources._1444590269_1;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(583, 466);
+            this.Nuevobutton.Location = new System.Drawing.Point(681, 466);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(83, 39);
             this.Nuevobutton.TabIndex = 9;
@@ -452,19 +459,6 @@
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "PeliculaId";
-            // 
-            // Modificarbutton
-            // 
-            this.Modificarbutton.Image = global::RegistroPelicula.Properties.Resources._1444590127_edit_find_replace;
-            this.Modificarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton.Location = new System.Drawing.Point(672, 466);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(92, 39);
-            this.Modificarbutton.TabIndex = 6;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Modificarbutton.UseVisualStyleBackColor = true;
-            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
             // 
             // label1
             // 
@@ -742,15 +736,6 @@
             this.agregarAutoresToolStripMenuItem.Text = "Agregar Autores";
             this.agregarAutoresToolStripMenuItem.Click += new System.EventHandler(this.agregarAutoresToolStripMenuItem_Click);
             // 
-            // EstudiocomboBox
-            // 
-            this.EstudiocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EstudiocomboBox.FormattingEnabled = true;
-            this.EstudiocomboBox.Location = new System.Drawing.Point(351, 299);
-            this.EstudiocomboBox.Name = "EstudiocomboBox";
-            this.EstudiocomboBox.Size = new System.Drawing.Size(224, 21);
-            this.EstudiocomboBox.TabIndex = 28;
-            // 
             // agregarEstudioToolStripMenuItem
             // 
             this.agregarEstudioToolStripMenuItem.Name = "agregarEstudioToolStripMenuItem";
@@ -813,7 +798,6 @@
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.TextBox ConsultartextBox;
         private System.Windows.Forms.DataGridView ResultadodataGridView;
-        private System.Windows.Forms.Button Modificarbutton;
         private System.Windows.Forms.TextBox PeliculaIdtextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

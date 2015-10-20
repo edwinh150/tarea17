@@ -143,7 +143,7 @@
     <None Include="Resources\1444590269_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLLS\BLL.csproj">
+    <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{51e3e7c7-91ec-4055-9b98-7344e1a57e2c}</Project>
       <Name>BLL</Name>
     </ProjectReference>

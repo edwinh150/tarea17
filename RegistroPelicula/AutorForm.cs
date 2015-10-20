@@ -75,7 +75,7 @@ namespace RegistroPelicula
             {
                 try
                 {
-                    Autor.AutoresId = Convert.ToInt32(AutoresIdtextBox.Text);
+                    Autor.AutoreId = Convert.ToInt32(AutoresIdtextBox.Text);
 
                     Autor.Eliminar();
 

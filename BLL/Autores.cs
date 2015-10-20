@@ -10,19 +10,19 @@ namespace BLLS
 {
     public class Autores : ClaseMaestra
     {
-        public int AutoresId { get; set; }
+        public int AutoreId { get; set; }
 
         public string NombreAutores { get; set; }
 
         public Autores()
         {
-            AutoresId = 0;
+            AutoreId = 0;
             NombreAutores = "";
         }
 
         public Autores(int Id, string NombreA)
         {
-            AutoresId = Id;
+            AutoreId = Id;
             NombreAutores = NombreA;
         }
 
@@ -57,7 +57,7 @@ namespace BLLS
         {
             bool retorno = false;
 
-            con.Ejecutar(string.Format("delete from Autores where AutoresId = '{0}' ", this.AutoresId));
+            con.Ejecutar(string.Format("delete from Autores where AutoresId = '{0}' ", this.AutoreId));
 
             return retorno;
         }

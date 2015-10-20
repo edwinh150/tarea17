@@ -49,7 +49,7 @@ namespace RegistroPelicula
             {
                 try
                 {
-                    estudio.EstudiosId = Convert.ToInt32(EstudiosIdtextBox.Text);
+                    estudio.EstudioId = Convert.ToInt32(EstudiosIdtextBox.Text);
 
                     estudio.Eliminar();
 

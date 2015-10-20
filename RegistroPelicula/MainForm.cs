@@ -276,7 +276,6 @@ namespace RegistroPelicula
 
         private void Modificarbutton_Click(object sender, EventArgs e)
         {
-            ConexionDb con = new ConexionDb();
 
             
         }
