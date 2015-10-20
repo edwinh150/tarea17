@@ -31,7 +31,8 @@ namespace BLLS
 
             ConexionDb conexion = new ConexionDb();
 
-            conexion.Ejecutar(string.Format("Insert Into Generos (Descripcion) Values ('{0}')", this.Descripcion));
+            retorno = conexion.Ejecutar(string.Format("Insert Into Generos (Descripcion) Values ('{0}')", this.Descripcion));
+
             return retorno;
         }
 
@@ -41,8 +42,8 @@ namespace BLLS
 
             ConexionDb conexion = new ConexionDb();
 
+            retorno = conexion.Ejecutar(string.Format("update Generos set Descripcion = '{0}' where GeneroId = '{1}' ", this.Descripcion, id));
 
-            conexion.Ejecutar(string.Format("update Generos set Descripcion = '{0}' where GeneroId = '{1}' ", this.Descripcion,id));
             return retorno;
         }
 
@@ -52,8 +53,8 @@ namespace BLLS
 
             ConexionDb conexion = new ConexionDb();
 
+            retorno = conexion.Ejecutar(string.Format("delete from Generos where GeneroId = '{0}' ", this.GeneroId));
 
-            conexion.Ejecutar(string.Format("delete from Generos where GeneroId = '{0}' ", this.GeneroId));
             return retorno;
         }
 

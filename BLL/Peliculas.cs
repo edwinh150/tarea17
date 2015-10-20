@@ -77,7 +77,7 @@ namespace BLLS
             ConexionDb conexion = new ConexionDb();
 
 
-            conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria,this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio));
+            retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria,this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio));
 
             return retorno;
         }
@@ -89,7 +89,7 @@ namespace BLLS
             ConexionDb conexion = new ConexionDb();
 
 
-            conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}', Autor = '{9}', Estudio = '{10}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio, id));
+            retorno = conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}', Autor = '{9}', Estudio = '{10}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio, id));
 
             return retorno;
         }
@@ -101,7 +101,7 @@ namespace BLLS
             ConexionDb conexion = new ConexionDb();
 
 
-            conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
+            retorno = conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
 
             return retorno;
         }

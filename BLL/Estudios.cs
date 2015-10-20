@@ -43,7 +43,7 @@ namespace BLLS
         {
             bool retorno = false;
 
-            con.Ejecutar(string.Format("update Estudios set Nombre = '{0}' where EstudiosId = '{1}' ", this.NombreEstudio, id));
+            retorno = con.Ejecutar(string.Format("update Estudios set Nombre = '{0}' where EstudiosId = '{1}' ", this.NombreEstudio, id));
 
             return retorno;
         }
@@ -52,7 +52,7 @@ namespace BLLS
         {
             bool retorno = false;
 
-            con.Ejecutar(string.Format("delete from Estudios where EstudiosId = '{0}' ", this.EstudioId));
+            retorno = con.Ejecutar(string.Format("delete from Estudios where EstudiosId = '{0}' ", this.EstudioId));
 
             return retorno;
         }
@@ -61,7 +61,7 @@ namespace BLLS
         {
             bool retorno = false;
 
-            con.Ejecutar(string.Format("insert into Estudios (Nombre) values ('{0}') ", this.NombreEstudio));
+            retorno = con.Ejecutar(string.Format("insert into Estudios (Nombre) values ('{0}') ", this.NombreEstudio));
 
             return retorno;
         }
