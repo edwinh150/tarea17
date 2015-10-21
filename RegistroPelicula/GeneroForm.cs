@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
-using BLLS;
+using BLL;
 
 namespace RegistroPelicula
 {
