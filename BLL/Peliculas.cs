@@ -25,15 +25,15 @@ namespace BLL
 
             public string Categoria { get; set; }
 
-            public string Genero { get; set; }
-
             public string RutadeImagen { get; set; }
+
+            public string Estudio { get; set; }
 
             public string RutadePelicula { get; set; }
 
             public List<Actores> Actores { get; set; }
 
-            public List<Estudios> Estudios { get; set; }
+            public List<Generos> Generos { get; set; }
 
         public Peliculas()
             {
@@ -43,14 +43,15 @@ namespace BLL
                 this.Calificacion = 0;
                 this.IMDB = 0;
                 this.Categoria = "";
-                this.Genero = "";
                 this.RutadeImagen = "";
                 this.RutadePelicula = "";
+                this.Estudio = "";
+
                 Actores = new List<Actores>();
-                Estudios = new List<Estudios>();
+                Generos = new List<Generos>();
             }
 
-            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string GeneroS, string RutaI, string RutaP)
+            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string RutaI, string RutaP, string EstudioS)
             {
                 this.Titulo = TituloS;
                 this.Descripcion = DescripcionS;
@@ -58,9 +59,9 @@ namespace BLL
                 this.Calificacion = CalificacionS;
                 this.IMDB = IMDBS;
                 this.Categoria = CategoriaIdS;
-                this.Genero = GeneroS;
                 this.RutadeImagen = RutaI;
                 this.RutadePelicula = RutaP;
+                this.Estudio = EstudioS;
             }
 
             public void AgregarActor(int ActorId, string NombreActores)
@@ -68,9 +69,9 @@ namespace BLL
                 this.Actores.Add(new Actores(ActorId, NombreActores));
             }
 
-            public void AgregarEstudio(int EstudioId, string NombreEstudio)
+            public void AgregarGenero(int GeneroId, string NombreGenero)
             {
-                this.Estudios.Add(new Estudios(EstudioId, NombreEstudio));
+                this.Generos.Add(new Generos(GeneroId, NombreGenero));
             }
 
 
@@ -86,7 +87,7 @@ namespace BLL
 
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria,this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio));
+            retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.RutadeImagen, this.RutadePelicula, this.Estudio));
             if (retorno)
             {
                 this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
@@ -104,9 +105,9 @@ namespace BLL
             {
                 this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
 
-                foreach (var estudio in this.Estudios)
+                foreach (var genero in this.Generos)
                 {
-                    Comando.AppendLine(String.Format("Insert into PeliculasEstudios (PeliculaId,EstudioId) Values({0},{1});", this.PeliculaId, estudio.EstudioId));
+                    Comando.AppendLine(String.Format("Insert into PeliculasGeneros (PeliculaId,GeneroId) Values({0},{1});", this.PeliculaId, genero.GeneroId));
 
                 }
 
@@ -123,7 +124,7 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
             StringBuilder Comando = new StringBuilder();
 
-            retorno = conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}', Autor = '{9}', Estudio = '{10}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio, id));
+            retorno = conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' , RutadeImagen = '{6}', RutadePelicula = '{7}', Estudio = '{8}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.RutadeImagen, this.RutadePelicula, this.Estudio, id));
 
             if (retorno)
             {
@@ -142,9 +143,9 @@ namespace BLL
             {
                 conexion.Ejecutar("Delete From PeliculasEstudios Where PeliculaId=" + this.PeliculaId);
 
-                foreach (var estudio in this.Estudios)
+                foreach (var genero in this.Generos)
                 {
-                    Comando.AppendLine(String.Format("Insert into PeliculasEstudios (PeliculaId,EstudioId) Values({0},{1});", this.PeliculaId, estudio.EstudioId));
+                    Comando.AppendLine(String.Format("Insert into PeliculasGeneros (PeliculaId,GeneroId) Values({0},{1});", this.PeliculaId, genero.GeneroId));
 
                 }
 
@@ -162,8 +163,8 @@ namespace BLL
 
 
             retorno = conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.PeliculaId + "; " +
-                                            "Delete From PeliculasActores Where PeliculaId=" + this.PeliculaId + "; " +
-                                            "Delete From PeliculasEstudios Where PeliculaId=" + this.PeliculaId));
+                                            "Delete From PeliculasActores Where PeliculaId =" + this.PeliculaId + "; " +
+                                            "Delete From PeliculasGeneros Where PeliculaId =" + this.PeliculaId));
 
             return retorno;
         }
@@ -184,7 +185,7 @@ namespace BLL
                 this.Calificacion = (int)dt.Rows[0]["Calificacion"];
                 this.IMDB = (int)dt.Rows[0]["IMDB"];
                 this.Categoria = dt.Rows[0]["CategoriaId"].ToString();
-                this.Genero = dt.Rows[0]["Genero"].ToString();
+                this.Estudio = dt.Rows[0]["Estudio"].ToString();
                 this.RutadePelicula = dt.Rows[0]["RutadePelicula"].ToString();
                 this.RutadeImagen = dt.Rows[0]["RutadeImagen"].ToString();
                 dtActores = con.ObtenerDatos("Select p.ActorId,a.Nombre " +
@@ -192,9 +193,9 @@ namespace BLL
                                                     "Inner Join Actores a On p.ActorId=a.ActorId" +
                                                     "Where p.PeliculaId=" + this.PeliculaId);
 
-                dtEstudio = con.ObtenerDatos("Select p.EstudiosId,e.Nombre " +
-                                                    "From PeliculasEstudios p " +
-                                                    "Inner Join Estudios a On p.EstudioId=e.EstudioId" +
+                dtEstudio = con.ObtenerDatos("Select p.GeneroId,e.Nombre " +
+                                                    "From PeliculasGeneros p " +
+                                                    "Inner Join Generos a On p.GeneroId=e.GeneroId" +
                                                     "Where p.PeliculaId=" + this.PeliculaId);
             }
 

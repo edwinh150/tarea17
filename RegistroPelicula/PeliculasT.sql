@@ -10,10 +10,8 @@ create table PeliculasT (
   Calificacion int,
   IMDB int,
   CategoriaId varchar(100),
-  Genero varchar(50), 
   RutadeImagen varchar(100), 
   RutadePelicula varchar(100),
-  Autor varchar(100),
   Estudio varchar(100)
   );
 
@@ -53,6 +51,8 @@ create table PeliculasT (
   PeliculaId int,
   ActorId int);
 
-  create table PeliculasEstudios (
+  create table PeliculasGeneros (
   PeliculaId int,
-  EstudioId int);
+  GeneroId int);
+
+  drop table PeliculasEstudios

@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.GenerocomboBox = new System.Windows.Forms.ComboBox();
             this.AgregarGenerobutton = new System.Windows.Forms.Button();
-            this.AutoreslistBox = new System.Windows.Forms.ListBox();
+            this.ActoreslistBox = new System.Windows.Forms.ListBox();
             this.GenerolistBox = new System.Windows.Forms.ListBox();
             this.AgregarAutoresbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.AutorescomboBox = new System.Windows.Forms.ComboBox();
+            this.ActorescomboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AnocomboBox = new System.Windows.Forms.ComboBox();
             this.Rutabutton = new System.Windows.Forms.Button();
@@ -155,11 +155,11 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.GenerocomboBox);
             this.groupBox2.Controls.Add(this.AgregarGenerobutton);
-            this.groupBox2.Controls.Add(this.AutoreslistBox);
+            this.groupBox2.Controls.Add(this.ActoreslistBox);
             this.groupBox2.Controls.Add(this.GenerolistBox);
             this.groupBox2.Controls.Add(this.AgregarAutoresbutton);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.AutorescomboBox);
+            this.groupBox2.Controls.Add(this.ActorescomboBox);
             this.groupBox2.Location = new System.Drawing.Point(696, 299);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(329, 142);
@@ -195,13 +195,13 @@
             this.AgregarGenerobutton.UseVisualStyleBackColor = true;
             this.AgregarGenerobutton.Click += new System.EventHandler(this.AgregarGenerobutton_Click);
             // 
-            // AutoreslistBox
+            // ActoreslistBox
             // 
-            this.AutoreslistBox.FormattingEnabled = true;
-            this.AutoreslistBox.Location = new System.Drawing.Point(208, 100);
-            this.AutoreslistBox.Name = "AutoreslistBox";
-            this.AutoreslistBox.Size = new System.Drawing.Size(114, 30);
-            this.AutoreslistBox.TabIndex = 27;
+            this.ActoreslistBox.FormattingEnabled = true;
+            this.ActoreslistBox.Location = new System.Drawing.Point(208, 100);
+            this.ActoreslistBox.Name = "ActoreslistBox";
+            this.ActoreslistBox.Size = new System.Drawing.Size(114, 30);
+            this.ActoreslistBox.TabIndex = 27;
             // 
             // GenerolistBox
             // 
@@ -231,14 +231,14 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Actores";
             // 
-            // AutorescomboBox
+            // ActorescomboBox
             // 
-            this.AutorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AutorescomboBox.FormattingEnabled = true;
-            this.AutorescomboBox.Location = new System.Drawing.Point(19, 99);
-            this.AutorescomboBox.Name = "AutorescomboBox";
-            this.AutorescomboBox.Size = new System.Drawing.Size(122, 21);
-            this.AutorescomboBox.TabIndex = 25;
+            this.ActorescomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ActorescomboBox.FormattingEnabled = true;
+            this.ActorescomboBox.Location = new System.Drawing.Point(19, 99);
+            this.ActorescomboBox.Name = "ActorescomboBox";
+            this.ActorescomboBox.Size = new System.Drawing.Size(122, 21);
+            this.ActorescomboBox.TabIndex = 25;
             // 
             // label7
             // 
@@ -821,11 +821,11 @@
         private System.Windows.Forms.Button Limpiarbutton;
         private System.Windows.Forms.Button AgregarGenerobutton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox AutoreslistBox;
+        private System.Windows.Forms.ListBox ActoreslistBox;
         private System.Windows.Forms.ListBox GenerolistBox;
         private System.Windows.Forms.Button AgregarAutoresbutton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox AutorescomboBox;
+        private System.Windows.Forms.ComboBox ActorescomboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem agregarAutoresToolStripMenuItem;
         private System.Windows.Forms.ComboBox EstudiocomboBox;

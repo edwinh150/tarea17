@@ -20,8 +20,9 @@ namespace BLL
             this.Descripcion = "";
         }
 
-        public Generos(string descripcion)
+        public Generos(int GeneroId, string descripcion)
         {
+            this.GeneroId = GeneroId;
             this.Descripcion = descripcion;
         }
 
