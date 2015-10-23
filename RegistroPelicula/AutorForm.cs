@@ -14,7 +14,7 @@ namespace RegistroPelicula
 {
     public partial class AutorForm : Form
     {
-        Autores Autor = new Autores();
+        Actores Autor = new Actores();
 
         public AutorForm()
         {
@@ -75,7 +75,7 @@ namespace RegistroPelicula
             {
                 try
                 {
-                    Autor.AutoreId = Convert.ToInt32(AutoresIdtextBox.Text);
+                    Autor.ActoreId = Convert.ToInt32(AutoresIdtextBox.Text);
 
                     Autor.Eliminar();
 

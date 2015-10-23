@@ -11,7 +11,7 @@ namespace BLL
         // Capa de negocio ya creada
         public class Peliculas : ClaseMaestra
         {
-            public int Peliculaid { get; set; }
+            public int PeliculaId { get; set; }
 
             public string Titulo { get; set; }
 
@@ -31,9 +31,9 @@ namespace BLL
 
             public string RutadePelicula { get; set; }
 
-            public string Autor { get; set; }
+            public List<Actores> Actores { get; set; }
 
-            public string Estudio { get; set; }
+            public List<Estudios> Estudios { get; set; }
 
         public Peliculas()
             {
@@ -46,11 +46,11 @@ namespace BLL
                 this.Genero = "";
                 this.RutadeImagen = "";
                 this.RutadePelicula = "";
-                this.Autor = "";
-                this.Estudio = "";
+                Actores = new List<Actores>();
+                Estudios = new List<Estudios>();
             }
 
-            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string GeneroS, string RutaI, string RutaP, string AutorS, string EstudioS)
+            public Peliculas(string TituloS, string DescripcionS, int AnoS, int CalificacionS, int IMDBS, string CategoriaIdS, string GeneroS, string RutaI, string RutaP)
             {
                 this.Titulo = TituloS;
                 this.Descripcion = DescripcionS;
@@ -61,23 +61,57 @@ namespace BLL
                 this.Genero = GeneroS;
                 this.RutadeImagen = RutaI;
                 this.RutadePelicula = RutaP;
-                this.Autor = AutorS;
-                this.Estudio = EstudioS;
             }
 
-            public Peliculas(int peliculaid)
+            public void AgregarActor(int ActorId, string NombreActores)
             {
-                this.Peliculaid = peliculaid;
+                this.Actores.Add(new Actores(ActorId, NombreActores));
+            }
+
+            public void AgregarEstudio(int EstudioId, string NombreEstudio)
+            {
+                this.Estudios.Add(new Estudios(EstudioId, NombreEstudio));
+            }
+
+
+        public Peliculas(int peliculaid)
+            {
+                this.PeliculaId = peliculaid;
             }
 
         public override bool Insertar()
         {
             bool retorno = false;
+            StringBuilder Comando = new StringBuilder();
 
             ConexionDb conexion = new ConexionDb();
 
-
             retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, Genero, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria,this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio));
+            if (retorno)
+            {
+                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
+
+                foreach (var autor in this.Actores)
+                {
+                    Comando.AppendLine(String.Format("Insert into PeliculasActores(PeliculaId,ActorId) Values({0},{1});", this.PeliculaId, autor.ActoreId));
+
+                }
+
+                retorno = conexion.Ejecutar(Comando.ToString());
+            }
+
+            if (retorno)
+            {
+                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
+
+                foreach (var estudio in this.Estudios)
+                {
+                    Comando.AppendLine(String.Format("Insert into PeliculasEstudios (PeliculaId,EstudioId) Values({0},{1});", this.PeliculaId, estudio.EstudioId));
+
+                }
+
+                retorno = conexion.Ejecutar(Comando.ToString());
+            }
 
             return retorno;
         }
@@ -87,9 +121,35 @@ namespace BLL
             bool retorno = false;
 
             ConexionDb conexion = new ConexionDb();
-
+            StringBuilder Comando = new StringBuilder();
 
             retorno = conexion.Ejecutar(string.Format("update PeliculasT set Titulo = '{0}' ,Descripcion = '{1}' ,Ano = '{2}' ,Calificacion = '{3}' ,IMDB = '{4}' ,CategoriaId = '{5}' ,Genero = '{6}', RutadeImagen = '{7}', RutadePelicula = '{8}', Autor = '{9}', Estudio = '{10}' where  PeliculaId = '{9}' ", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.Genero, this.RutadeImagen, this.RutadePelicula, this.Autor, this.Estudio, id));
+
+            if (retorno)
+            {
+                conexion.Ejecutar("Delete From PeliculasActores Where PeliculaId=" + this.PeliculaId);
+
+                foreach (var autor in this.Actores)
+                {
+                    Comando.AppendLine(String.Format("insert into PeliculasActores (PeliculaId,ActorId) Values({0},{1});", this.PeliculaId, autor.ActoreId));
+
+                }
+
+                retorno = conexion.Ejecutar(Comando.ToString());
+            }
+
+            if (retorno)
+            {
+                conexion.Ejecutar("Delete From PeliculasEstudios Where PeliculaId=" + this.PeliculaId);
+
+                foreach (var estudio in this.Estudios)
+                {
+                    Comando.AppendLine(String.Format("Insert into PeliculasEstudios (PeliculaId,EstudioId) Values({0},{1});", this.PeliculaId, estudio.EstudioId));
+
+                }
+
+                retorno = conexion.Ejecutar(Comando.ToString());
+            }
 
             return retorno;
         }
@@ -101,7 +161,9 @@ namespace BLL
             ConexionDb conexion = new ConexionDb();
 
 
-            retorno = conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.Peliculaid));
+            retorno = conexion.Ejecutar(string.Format("delete from PeliculasT where  PeliculaId = '{0}' ", this.PeliculaId + "; " +
+                                            "Delete From PeliculasActores Where PeliculaId=" + this.PeliculaId + "; " +
+                                            "Delete From PeliculasEstudios Where PeliculaId=" + this.PeliculaId));
 
             return retorno;
         }
@@ -110,6 +172,8 @@ namespace BLL
         {
             ConexionDb con = new ConexionDb();
             DataTable dt = new DataTable();
+            DataTable dtActores = new DataTable();
+            DataTable dtEstudio = new DataTable();
 
             dt = con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0} ", IdBuscado));
             if (dt.Rows.Count > 0)
@@ -123,8 +187,15 @@ namespace BLL
                 this.Genero = dt.Rows[0]["Genero"].ToString();
                 this.RutadePelicula = dt.Rows[0]["RutadePelicula"].ToString();
                 this.RutadeImagen = dt.Rows[0]["RutadeImagen"].ToString();
-                this.Autor = dt.Rows[0]["Autor"].ToString();
-                this.Estudio = dt.Rows[0]["Estudio"].ToString();
+                dtActores = con.ObtenerDatos("Select p.ActorId,a.Nombre " +
+                                                    "From PeliculasActores p " +
+                                                    "Inner Join Actores a On p.ActorId=a.ActorId" +
+                                                    "Where p.PeliculaId=" + this.PeliculaId);
+
+                dtEstudio = con.ObtenerDatos("Select p.EstudiosId,e.Nombre " +
+                                                    "From PeliculasEstudios p " +
+                                                    "Inner Join Estudios a On p.EstudioId=e.EstudioId" +
+                                                    "Where p.PeliculaId=" + this.PeliculaId);
             }
 
             return dt.Rows.Count > 0;
@@ -134,8 +205,11 @@ namespace BLL
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             ConexionDb con = new ConexionDb();
+            string ordenFinal = ""; //!orden.Equals("") ? " orden by  " + orden : "";
+            if (!Orden.Equals(""))
+                ordenFinal = " orden by  " + Orden;
 
-            return con.ObtenerDatos("select " + Campos + " from PeliculasT where " + Condicion + "  " + Orden);
+            return con.ObtenerDatos("select " + Campos + " from PeliculasT where " + Condicion + "  " + ordenFinal);
         }
     }
 }

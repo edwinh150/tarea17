@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autores.cs" />
+    <Compile Include="Actores.cs" />
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Estudios.cs" />
     <Compile Include="Generos.cs" />

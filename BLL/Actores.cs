@@ -8,21 +8,21 @@ using DAL;
 
 namespace BLL
 {
-    public class Autores : ClaseMaestra
+    public class Actores : ClaseMaestra
     {
-        public int AutoreId { get; set; }
+        public int ActoreId { get; set; }
 
         public string NombreAutores { get; set; }
 
-        public Autores()
+        public Actores()
         {
-            AutoreId = 0;
+            ActoreId = 0;
             NombreAutores = "";
         }
 
-        public Autores(int Id, string NombreA)
+        public Actores(int Id, string NombreA)
         {
-            AutoreId = Id;
+            ActoreId = Id;
             NombreAutores = NombreA;
         }
 
@@ -33,7 +33,7 @@ namespace BLL
             ConexionDb con = new ConexionDb();
             DataTable dt = new DataTable();
 
-            dt = con.ObtenerDatos(string.Format("select * from Autores where AutoresId = '{0}' ", IdBuscado));
+            dt = con.ObtenerDatos(string.Format("select * from Actores where AutoresId = '{0}' ", IdBuscado));
             if (dt.Rows.Count > 0)
             {
 
@@ -48,7 +48,7 @@ namespace BLL
         {
             bool retorno = false;
 
-            retorno = con.Ejecutar(string.Format("update Autores set Nombre = '{0}' where AutoresId = '{1}'", this.NombreAutores, id));
+            retorno = con.Ejecutar(string.Format("update Actores set Nombre = '{0}' where AutoresId = '{1}'", this.NombreAutores, id));
 
             return retorno;
         }
@@ -57,7 +57,7 @@ namespace BLL
         {
             bool retorno = false;
 
-            retorno = con.Ejecutar(string.Format("delete from Autores where AutoresId = '{0}' ", this.AutoreId));
+            retorno = con.Ejecutar(string.Format("delete from Actores where AutoresId = '{0}' ", this.ActoreId));
 
             return retorno;
         }
@@ -66,14 +66,14 @@ namespace BLL
         {
             bool retorno = false;
 
-            retorno = con.Ejecutar(String.Format("Insert into Autores (Nombre) values('{0}')", this.NombreAutores));
+            retorno = con.Ejecutar(String.Format("Insert into Actores (Nombre) values('{0}')", this.NombreAutores));
 
             return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return con.ObtenerDatos("select " + Campos + " from Autores where " + Condicion + "  " + Orden);
+            return con.ObtenerDatos("select " + Campos + " from Actores where " + Condicion + "  " + Orden);
         }
     }
 }

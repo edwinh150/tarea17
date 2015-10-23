@@ -48,3 +48,11 @@ create table PeliculasT (
 
 
   Insert Into Generos (Descripcion) Values ('Terror')
+
+  create table PeliculasActores(
+  PeliculaId int,
+  ActorId int);
+
+  create table PeliculasEstudios (
+  PeliculaId int,
+  EstudioId int);

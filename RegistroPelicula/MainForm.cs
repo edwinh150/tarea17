@@ -16,7 +16,7 @@ namespace RegistroPelicula
     {
         Peliculas peliculaC = new Peliculas();
         Generos genero = new Generos();
-        Autores autor = new Autores();
+        Actores autor = new Actores();
         Estudios estudio = new Estudios();
 
         public string ruta;
@@ -309,7 +309,7 @@ namespace RegistroPelicula
             {
                 try
                 {
-                    peliculaC.Peliculaid = Convert.ToInt32(PeliculaIdtextBox.Text);
+                    peliculaC.PeliculaId = Convert.ToInt32(PeliculaIdtextBox.Text);
 
                     peliculaC.Eliminar();
 

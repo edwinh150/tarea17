@@ -229,7 +229,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Autores";
+            this.label6.Text = "Actores";
             // 
             // AutorescomboBox
             // 
@@ -733,7 +733,7 @@
             // 
             this.agregarAutoresToolStripMenuItem.Name = "agregarAutoresToolStripMenuItem";
             this.agregarAutoresToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.agregarAutoresToolStripMenuItem.Text = "Agregar Autores";
+            this.agregarAutoresToolStripMenuItem.Text = "Agregar Actores";
             this.agregarAutoresToolStripMenuItem.Click += new System.EventHandler(this.agregarAutoresToolStripMenuItem_Click);
             // 
             // agregarEstudioToolStripMenuItem
