@@ -25,7 +25,9 @@ namespace RegistroPelicula
         public MainForm()
         {
             InitializeComponent();
+
             ConcomboBox.Text = "Todos";
+
             for (int i = 0; i < genero.Listado(" * ", "1=1", "").Rows.Count; i++)
             {
                 GenerocomboBox.Items.Add(genero.Listado(" * ", "1=1", "").Rows[i]["Descripcion"]);
@@ -34,6 +36,11 @@ namespace RegistroPelicula
             for (int i = 0; i < autor.Listado(" * ", "1=1", "").Rows.Count; i++)
             {
                 ActorescomboBox.Items.Add(autor.Listado(" * ", "1=1", "").Rows[i]["Nombre"]);
+            }
+
+            for (int i = 0; i < estudio.Listado(" * ", "1=1", "").Rows.Count; i++)
+            {
+                EstudiocomboBox.Items.Add(estudio.Listado(" * ", "1=1", "").Rows[i]["Nombre"]);
             }
 
         }
@@ -164,19 +171,6 @@ namespace RegistroPelicula
                         MessageBox.Show(ex.Message);
                     }
                 }
-
-                if (ConcomboBox.Text == "Ano")
-                {
-                    try
-                    {
-                       ResultadodataGridView.DataSource = peli.Listado(" * ", "Ano = " + ConsultartextBox.Text, "");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
             }
         }
 
@@ -218,6 +212,7 @@ namespace RegistroPelicula
                     {
                         MessageBox.Show(ex.Message);
                     }
+                    limpiar();
                 }
             }
             else
@@ -252,8 +247,9 @@ namespace RegistroPelicula
                 {
                     MessageBox.Show(ex.Message);
                 }
+                //limpiar();
             }
-            limpiar();           
+                      
         }
 
         private void limpiarbutton_Click(object sender, EventArgs e)
@@ -366,14 +362,14 @@ namespace RegistroPelicula
         {
             int IdG = 0;
 
+            GenerolistBox.Items.Add(GenerocomboBox.Text);
+
             for (int i = 0; i < genero.Listado(" * ", "1=1", "").Rows.Count; i++)
             {
-                
-                GenerolistBox.Items.Add(GenerocomboBox.Text);
-                IdG = (int)genero.Listado("GeneroId", "Descripcion =", GenerolistBox.Text).Rows[0]["GeneroId"];
-            }
+                IdG = (int)genero.Listado("GeneroId", string.Format("Descripcion = '{0}' ", GenerocomboBox.Text), " ").Rows[0]["GeneroId"];
 
-            peliculaC.AgregarGenero(IdG, GenerolistBox.Text);
+                peliculaC.AgregarGenero(IdG, GenerolistBox.Text);
+            }
 
             GenerocomboBox.Text = "";
         }
@@ -395,11 +391,12 @@ namespace RegistroPelicula
         private void AgregarAutoresbutton_Click(object sender, EventArgs e)
         {
             int Id = 0;
+
+            ActoreslistBox.Items.Add(ActorescomboBox.Text);
+
             for (int i = 0; i < autor.Listado(" * ", "1=1", "").Rows.Count; i++)
             {
-
-                ActoreslistBox.Items.Add(ActorescomboBox.Text);
-                Id = (int)autor.Listado("AutoresId", "Nombre =", ActoreslistBox.Text).Rows[0]["ActoresId"];
+                Id = (int)autor.Listado("AutoresId", string.Format("Nombre = '{0}' ", ActorescomboBox.Text)," ").Rows[0]["AutoresId"];
 
                 peliculaC.AgregarActor(Id,ActoreslistBox.Text);
             }

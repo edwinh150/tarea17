@@ -17,6 +17,8 @@ create table PeliculasT (
 
   select * from PeliculasT
 
+  Select Max(PeliculaId) from PeliculasT
+
   drop table PeliculasT
 
   drop table GeneroT
@@ -55,4 +57,4 @@ create table PeliculasT (
   PeliculaId int,
   GeneroId int);
 
-  drop table PeliculasEstudios
+  select * from PeliculasActores

@@ -27,9 +27,9 @@ namespace BLL
 
             public string RutadeImagen { get; set; }
 
-            public string Estudio { get; set; }
-
             public string RutadePelicula { get; set; }
+
+            public string Estudio { get; set; }
 
             public List<Actores> Actores { get; set; }
 
@@ -87,14 +87,14 @@ namespace BLL
 
             ConexionDb conexion = new ConexionDb();
 
-            retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, RutadeImagen, RutadePelicula, Autor, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.RutadeImagen, this.RutadePelicula, this.Estudio));
+            retorno = conexion.Ejecutar(string.Format("Insert Into PeliculasT ( Titulo, Descripcion, Ano, Calificacion, IMDB, CategoriaId, RutadeImagen, RutadePelicula, Estudio) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", this.Titulo, this.Descripcion, this.Ano, this.Calificacion, this.IMDB, this.Categoria, this.RutadeImagen, this.RutadePelicula, this.Estudio));
             if (retorno)
             {
-                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
+                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from PeliculasT").Rows[0]["PeliculaId"];
 
                 foreach (var autor in this.Actores)
                 {
-                    Comando.AppendLine(String.Format("Insert into PeliculasActores(PeliculaId,ActorId) Values({0},{1});", this.PeliculaId, autor.ActoreId));
+                    Comando.AppendLine(String.Format("Insert into PeliculasActores (PeliculaId,ActorId) Values({0},{1});", this.PeliculaId, autor.ActoreId));
 
                 }
 
@@ -103,7 +103,7 @@ namespace BLL
 
             if (retorno)
             {
-                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from Peliculas").Rows[0]["PeliculaId"];
+                this.PeliculaId = (int)conexion.ObtenerDatos("Select Max(PeliculaId) from PeliculasT").Rows[0]["PeliculaId"];
 
                 foreach (var genero in this.Generos)
                 {
@@ -128,7 +128,7 @@ namespace BLL
 
             if (retorno)
             {
-                conexion.Ejecutar("Delete From PeliculasActores Where PeliculaId=" + this.PeliculaId);
+                conexion.Ejecutar("Delete From PeliculasActores Where PeliculaId = " + this.PeliculaId);
 
                 foreach (var autor in this.Actores)
                 {
@@ -141,7 +141,7 @@ namespace BLL
 
             if (retorno)
             {
-                conexion.Ejecutar("Delete From PeliculasEstudios Where PeliculaId=" + this.PeliculaId);
+                conexion.Ejecutar("Delete From PeliculasEstudios Where PeliculaId =" + this.PeliculaId);
 
                 foreach (var genero in this.Generos)
                 {
