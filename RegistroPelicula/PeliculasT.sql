@@ -58,3 +58,7 @@ create table PeliculasT (
   GeneroId int);
 
   select * from PeliculasActores
+
+  drop table PeliculasActores
+
+  drop table PeliculasGeneros

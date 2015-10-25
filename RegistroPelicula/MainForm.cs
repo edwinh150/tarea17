@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using BLL;
+using BLLS;
 
 namespace RegistroPelicula
 {
@@ -177,6 +178,7 @@ namespace RegistroPelicula
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             ConexionDb con = new ConexionDb();
+            int Id = 0;
 
             if (PeliculaIdtextBox.Text.Length > 0)
             {
@@ -237,6 +239,22 @@ namespace RegistroPelicula
 
                     peliculaC.Estudio = EstudiocomboBox.Text;
 
+                    for (int i = 0; i < ActoreslistBox.Items.Count; i++)
+                    {
+                        Id = (int)autor.Listado("AutoresId", string.Format("Nombre = '{0}' ", ActoreslistBox.Items[i]), " ").Rows[0]["AutoresId"];
+
+                        peliculaC.AgregarActor(Id, ActoreslistBox.Text);
+                    }
+
+                    Id = 0;
+
+                    for (int i = 0; i < GenerolistBox.Items.Count; i++)
+                    {
+                        Id = (int)genero.Listado("GeneroId", string.Format("Descripcion = '{0}' ", GenerolistBox.Items[i]), " ").Rows[0]["GeneroId"];
+
+                        peliculaC.AgregarGenero(Id, GenerolistBox.Text);
+                    }
+
                     peliculaC.Insertar();
 
                     MessageBox.Show("Se guardo correctamente");
@@ -247,7 +265,7 @@ namespace RegistroPelicula
                 {
                     MessageBox.Show(ex.Message);
                 }
-                //limpiar();
+                limpiar();
             }
                       
         }
@@ -360,18 +378,11 @@ namespace RegistroPelicula
 
         private void AgregarGenerobutton_Click(object sender, EventArgs e)
         {
-            int IdG = 0;
 
             GenerolistBox.Items.Add(GenerocomboBox.Text);
 
-            for (int i = 0; i < genero.Listado(" * ", "1=1", "").Rows.Count; i++)
-            {
-                IdG = (int)genero.Listado("GeneroId", string.Format("Descripcion = '{0}' ", GenerocomboBox.Text), " ").Rows[0]["GeneroId"];
-
-                peliculaC.AgregarGenero(IdG, GenerolistBox.Text);
-            }
-
             GenerocomboBox.Text = "";
+            
         }
 
         private void agregarAutoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -390,18 +401,20 @@ namespace RegistroPelicula
 
         private void AgregarAutoresbutton_Click(object sender, EventArgs e)
         {
-            int Id = 0;
 
             ActoreslistBox.Items.Add(ActorescomboBox.Text);
-
-            for (int i = 0; i < autor.Listado(" * ", "1=1", "").Rows.Count; i++)
-            {
-                Id = (int)autor.Listado("AutoresId", string.Format("Nombre = '{0}' ", ActorescomboBox.Text)," ").Rows[0]["AutoresId"];
-
-                peliculaC.AgregarActor(Id,ActoreslistBox.Text);
-            }
             
             ActorescomboBox.Text = "";
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PeliculaCrystalReport pc = new PeliculaCrystalReport();
+            CrystalReportForm Crf = new CrystalReportForm();
+
+            Crf.PeliculacrystalReportViewer.ReportSource = pc;
+
+            Crf.ShowDialog();
         }
     }
 }

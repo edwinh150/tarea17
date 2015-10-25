@@ -81,6 +81,7 @@
             this.agregarGeneroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarAutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -227,7 +228,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(16, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
+            this.label6.Size = new System.Drawing.Size(54, 15);
             this.label6.TabIndex = 24;
             this.label6.Text = "Actores";
             // 
@@ -717,7 +718,8 @@
             this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarGeneroToolStripMenuItem,
             this.agregarAutoresToolStripMenuItem,
-            this.agregarEstudioToolStripMenuItem});
+            this.agregarEstudioToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
@@ -725,23 +727,30 @@
             // agregarGeneroToolStripMenuItem
             // 
             this.agregarGeneroToolStripMenuItem.Name = "agregarGeneroToolStripMenuItem";
-            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarGeneroToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.agregarGeneroToolStripMenuItem.Text = "Agregar Genero";
             this.agregarGeneroToolStripMenuItem.Click += new System.EventHandler(this.agregarGeneroToolStripMenuItem_Click);
             // 
             // agregarAutoresToolStripMenuItem
             // 
             this.agregarAutoresToolStripMenuItem.Name = "agregarAutoresToolStripMenuItem";
-            this.agregarAutoresToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarAutoresToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.agregarAutoresToolStripMenuItem.Text = "Agregar Actores";
             this.agregarAutoresToolStripMenuItem.Click += new System.EventHandler(this.agregarAutoresToolStripMenuItem_Click);
             // 
             // agregarEstudioToolStripMenuItem
             // 
             this.agregarEstudioToolStripMenuItem.Name = "agregarEstudioToolStripMenuItem";
-            this.agregarEstudioToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.agregarEstudioToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.agregarEstudioToolStripMenuItem.Text = "Agregar Estudio";
             this.agregarEstudioToolStripMenuItem.Click += new System.EventHandler(this.agregarEstudioToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -830,6 +839,7 @@
         private System.Windows.Forms.ToolStripMenuItem agregarAutoresToolStripMenuItem;
         private System.Windows.Forms.ComboBox EstudiocomboBox;
         private System.Windows.Forms.ToolStripMenuItem agregarEstudioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }
 
