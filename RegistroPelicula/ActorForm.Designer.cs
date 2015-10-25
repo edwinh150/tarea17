@@ -1,6 +1,6 @@
 ﻿namespace RegistroPelicula
 {
-    partial class AutorForm
+    partial class ActorForm
     {
         /// <summary>
         /// Required designer variable.

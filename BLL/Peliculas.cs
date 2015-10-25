@@ -172,7 +172,7 @@ namespace BLL
             ConexionDb con = new ConexionDb();
             DataTable dt = new DataTable();
             DataTable dtActores = new DataTable();
-            DataTable dtEstudio = new DataTable();
+            DataTable dtGenero = new DataTable();
 
             dt = con.ObtenerDatos(string.Format("select * from PeliculasT where PeliculaId = {0} ", IdBuscado));
             if (dt.Rows.Count > 0)
@@ -186,12 +186,13 @@ namespace BLL
                 this.Estudio = dt.Rows[0]["Estudio"].ToString();
                 this.RutadePelicula = dt.Rows[0]["RutadePelicula"].ToString();
                 this.RutadeImagen = dt.Rows[0]["RutadeImagen"].ToString();
+                this.Estudio = dt.Rows[0]["Estudio"].ToString();
                 dtActores = con.ObtenerDatos("Select p.ActorId,a.Nombre " +
                                                     "From PeliculasActores p " +
                                                     "Inner Join Actores a On p.ActorId=a.ActorId" +
                                                     "Where p.PeliculaId=" + this.PeliculaId);
 
-                dtEstudio = con.ObtenerDatos("Select p.GeneroId,e.Nombre " +
+                dtGenero = con.ObtenerDatos("Select p.GeneroId,e.Nombre " +
                                                     "From PeliculasGeneros p " +
                                                     "Inner Join Generos a On p.GeneroId=e.GeneroId" +
                                                     "Where p.PeliculaId=" + this.PeliculaId);

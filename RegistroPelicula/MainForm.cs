@@ -206,6 +206,22 @@ namespace RegistroPelicula
 
                         peliculaC.Estudio = EstudiocomboBox.Text;
 
+                        for (int i = 0; i < ActoreslistBox.Items.Count; i++)
+                        {
+                            Id = (int)autor.Listado("AutoresId", string.Format("Nombre = '{0}' ", ActoreslistBox.Items[i]), " ").Rows[0]["AutoresId"];
+
+                            peliculaC.AgregarActor(Id, ActoreslistBox.Text);
+                        }
+
+                        Id = 0;
+
+                        for (int i = 0; i < GenerolistBox.Items.Count; i++)
+                        {
+                            Id = (int)genero.Listado("GeneroId", string.Format("Descripcion = '{0}' ", GenerolistBox.Items[i]), " ").Rows[0]["GeneroId"];
+
+                            peliculaC.AgregarGenero(Id, GenerolistBox.Text);
+                        }
+
                         peliculaC.Editar(id);
 
                         MessageBox.Show("Se modifico correctamente");
@@ -214,7 +230,7 @@ namespace RegistroPelicula
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    limpiar();
+                    
                 }
             }
             else
@@ -387,7 +403,7 @@ namespace RegistroPelicula
 
         private void agregarAutoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AutorForm autor = new AutorForm();
+            ActorForm autor = new ActorForm();
 
             autor.Show();   
         }

@@ -12,11 +12,11 @@ using BLL;
 
 namespace RegistroPelicula
 {
-    public partial class AutorForm : Form
+    public partial class ActorForm : Form
     {
         Actores Autor = new Actores();
 
-        public AutorForm()
+        public ActorForm()
         {
             InitializeComponent();
         }
