@@ -45,17 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actores.cs" />
+    <Compile Include="ActoresCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActoresCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Estudios.cs" />
     <Compile Include="Generos.cs" />
     <Compile Include="..\BLL\Peliculas.cs">
       <Link>Peliculas.cs</Link>
-    </Compile>
-    <Compile Include="PeliculaCrystalReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PeliculaCrystalReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Peliculas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,9 +70,9 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PeliculaCrystalReport.rpt">
+    <EmbeddedResource Include="ActoresCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PeliculaCrystalReport.cs</LastGenOutput>
+      <LastGenOutput>ActoresCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

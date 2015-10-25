@@ -16,14 +16,14 @@ namespace BLLS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class PeliculaCrystalReport : ReportClass {
+    public class ActoresCrystalReport : ReportClass {
         
-        public PeliculaCrystalReport() {
+        public ActoresCrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "PeliculaCrystalReport.rpt";
+                return "ActoresCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BLLS {
         
         public override string FullResourceName {
             get {
-                return "BLLS.PeliculaCrystalReport.rpt";
+                return "BLLS.ActoresCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BLLS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPeliculaCrystalReport : Component, ICachedReport {
+    public class CachedActoresCrystalReport : Component, ICachedReport {
         
-        public CachedPeliculaCrystalReport() {
+        public CachedActoresCrystalReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BLLS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            PeliculaCrystalReport rpt = new PeliculaCrystalReport();
+            ActoresCrystalReport rpt = new ActoresCrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -409,10 +409,10 @@ namespace RegistroPelicula
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PeliculaCrystalReport pc = new PeliculaCrystalReport();
+            ActoresCrystalReport ac = new ActoresCrystalReport();
             CrystalReportForm Crf = new CrystalReportForm();
 
-            Crf.PeliculacrystalReportViewer.ReportSource = pc;
+            Crf.PeliculacrystalReportViewer.ReportSource = ac;
 
             Crf.ShowDialog();
         }
