@@ -21,7 +21,7 @@ namespace RegistroPelicula
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
-            ReproductoraxWindowsMediaPlayer.URL = mn.ruta;
+            ReproductoraxWindowsMediaPlayer.URL = mn.ruta.ToString();
         }
 
         private void Playbutton_Click(object sender, EventArgs e)
