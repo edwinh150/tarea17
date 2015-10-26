@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace DAL
 {
     // Capa de conexion ya creada
-
+    //Data Source=DARLENISM\\SQLEXPRESS; Initial Catalog=Peliculas; Integrated Security=True
+    //Data Source=EDWINH150\\SQLEXPRESS; Initial Catalog=Peliculas; Integrated Security=True
     public class ConexionDb
     {
         private SqlConnection con;
