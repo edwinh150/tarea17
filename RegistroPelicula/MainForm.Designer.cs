@@ -104,7 +104,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1080, 642);
-            this.tabControl1.TabIndex = 7;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -149,7 +149,7 @@
             this.EstudiocomboBox.Location = new System.Drawing.Point(351, 299);
             this.EstudiocomboBox.Name = "EstudiocomboBox";
             this.EstudiocomboBox.Size = new System.Drawing.Size(224, 21);
-            this.EstudiocomboBox.TabIndex = 28;
+            this.EstudiocomboBox.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -184,14 +184,14 @@
             this.GenerocomboBox.Location = new System.Drawing.Point(18, 38);
             this.GenerocomboBox.Name = "GenerocomboBox";
             this.GenerocomboBox.Size = new System.Drawing.Size(122, 21);
-            this.GenerocomboBox.TabIndex = 21;
+            this.GenerocomboBox.TabIndex = 0;
             // 
             // AgregarGenerobutton
             // 
             this.AgregarGenerobutton.Location = new System.Drawing.Point(146, 38);
             this.AgregarGenerobutton.Name = "AgregarGenerobutton";
             this.AgregarGenerobutton.Size = new System.Drawing.Size(54, 23);
-            this.AgregarGenerobutton.TabIndex = 22;
+            this.AgregarGenerobutton.TabIndex = 2;
             this.AgregarGenerobutton.Text = "Agregar";
             this.AgregarGenerobutton.UseVisualStyleBackColor = true;
             this.AgregarGenerobutton.Click += new System.EventHandler(this.AgregarGenerobutton_Click);
@@ -217,7 +217,7 @@
             this.AgregarAutoresbutton.Location = new System.Drawing.Point(147, 100);
             this.AgregarAutoresbutton.Name = "AgregarAutoresbutton";
             this.AgregarAutoresbutton.Size = new System.Drawing.Size(54, 23);
-            this.AgregarAutoresbutton.TabIndex = 26;
+            this.AgregarAutoresbutton.TabIndex = 3;
             this.AgregarAutoresbutton.Text = "Agregar";
             this.AgregarAutoresbutton.UseVisualStyleBackColor = true;
             this.AgregarAutoresbutton.Click += new System.EventHandler(this.AgregarAutoresbutton_Click);
@@ -239,7 +239,7 @@
             this.ActorescomboBox.Location = new System.Drawing.Point(19, 99);
             this.ActorescomboBox.Name = "ActorescomboBox";
             this.ActorescomboBox.Size = new System.Drawing.Size(122, 21);
-            this.ActorescomboBox.TabIndex = 25;
+            this.ActorescomboBox.TabIndex = 1;
             // 
             // label7
             // 
@@ -335,14 +335,14 @@
             this.AnocomboBox.Location = new System.Drawing.Point(351, 349);
             this.AnocomboBox.Name = "AnocomboBox";
             this.AnocomboBox.Size = new System.Drawing.Size(224, 21);
-            this.AnocomboBox.TabIndex = 20;
+            this.AnocomboBox.TabIndex = 4;
             // 
             // Rutabutton
             // 
             this.Rutabutton.Location = new System.Drawing.Point(292, 392);
             this.Rutabutton.Name = "Rutabutton";
             this.Rutabutton.Size = new System.Drawing.Size(22, 23);
-            this.Rutabutton.TabIndex = 19;
+            this.Rutabutton.TabIndex = 7;
             this.Rutabutton.Text = ".....";
             this.Rutabutton.UseVisualStyleBackColor = true;
             this.Rutabutton.Click += new System.EventHandler(this.Rutabutton_Click);
@@ -354,7 +354,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(859, 466);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(83, 39);
-            this.Buscarbutton.TabIndex = 18;
+            this.Buscarbutton.TabIndex = 11;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
@@ -367,7 +367,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(948, 466);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(83, 39);
-            this.Eliminarbutton.TabIndex = 17;
+            this.Eliminarbutton.TabIndex = 12;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -383,7 +383,7 @@
             this.CategoriacomboBox.Location = new System.Drawing.Point(351, 394);
             this.CategoriacomboBox.Name = "CategoriacomboBox";
             this.CategoriacomboBox.Size = new System.Drawing.Size(224, 21);
-            this.CategoriacomboBox.TabIndex = 16;
+            this.CategoriacomboBox.TabIndex = 5;
             // 
             // label5
             // 
@@ -393,7 +393,7 @@
             this.label5.Location = new System.Drawing.Point(84, 121);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 15);
-            this.label5.TabIndex = 14;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Portada";
             // 
             // label4
@@ -412,7 +412,7 @@
             this.RutatextBox.Location = new System.Drawing.Point(87, 394);
             this.RutatextBox.Name = "RutatextBox";
             this.RutatextBox.Size = new System.Drawing.Size(199, 20);
-            this.RutatextBox.TabIndex = 12;
+            this.RutatextBox.TabIndex = 6;
             this.RutatextBox.DoubleClick += new System.EventHandler(this.RutatextBox_DoubleClick);
             // 
             // PortadapictureBox
@@ -447,7 +447,7 @@
             this.PeliculaIdtextBox.Location = new System.Drawing.Point(351, 155);
             this.PeliculaIdtextBox.Name = "PeliculaIdtextBox";
             this.PeliculaIdtextBox.Size = new System.Drawing.Size(298, 20);
-            this.PeliculaIdtextBox.TabIndex = 7;
+            this.PeliculaIdtextBox.TabIndex = 0;
             this.PeliculaIdtextBox.TextChanged += new System.EventHandler(this.PeliculaIdtextBox_TextChanged);
             // 
             // label2
@@ -478,14 +478,14 @@
             this.TitulotextBox.Location = new System.Drawing.Point(351, 197);
             this.TitulotextBox.Name = "TitulotextBox";
             this.TitulotextBox.Size = new System.Drawing.Size(298, 20);
-            this.TitulotextBox.TabIndex = 0;
+            this.TitulotextBox.TabIndex = 1;
             // 
             // DescripciontextBox
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(351, 243);
             this.DescripciontextBox.Name = "DescripciontextBox";
             this.DescripciontextBox.Size = new System.Drawing.Size(298, 20);
-            this.DescripciontextBox.TabIndex = 0;
+            this.DescripciontextBox.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -497,7 +497,7 @@
             this.groupBox1.Location = new System.Drawing.Point(696, 155);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(329, 126);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puntuacion";
             // 
@@ -533,7 +533,7 @@
             this.CalificaciontextBox.Location = new System.Drawing.Point(75, 85);
             this.CalificaciontextBox.Name = "CalificaciontextBox";
             this.CalificaciontextBox.Size = new System.Drawing.Size(181, 20);
-            this.CalificaciontextBox.TabIndex = 0;
+            this.CalificaciontextBox.TabIndex = 1;
             // 
             // CIlabel
             // 
@@ -553,7 +553,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(770, 466);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(83, 39);
-            this.Guardarbutton.TabIndex = 1;
+            this.Guardarbutton.TabIndex = 10;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
