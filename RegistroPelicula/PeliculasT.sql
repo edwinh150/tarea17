@@ -59,6 +59,8 @@ create table PeliculasT (
 
   select * from PeliculasActores
 
+  select * from PeliculasGeneros
+
   drop table PeliculasActores
 
   drop table PeliculasGeneros
