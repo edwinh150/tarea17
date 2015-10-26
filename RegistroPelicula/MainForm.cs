@@ -159,19 +159,6 @@ namespace RegistroPelicula
                         MessageBox.Show(ex.Message);
                     }
                 }
-
-                if (ConcomboBox.Text == "Genero")
-                {
-                    try
-                    {
-                       ResultadodataGridView.DataSource = peli.Listado(" * ", "Genero = " + ConsultartextBox.Text, "");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
             }
         }
 
@@ -394,10 +381,17 @@ namespace RegistroPelicula
 
         private void AgregarGenerobutton_Click(object sender, EventArgs e)
         {
+            if (GenerocomboBox.Text.Length > 0)
+            {
+                GenerolistBox.Items.Add(GenerocomboBox.Text);
 
-            GenerolistBox.Items.Add(GenerocomboBox.Text);
-
-            GenerocomboBox.Text = "";
+                GenerocomboBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Selecione un genero primero","Por Favor");
+            }
+           
             
         }
 
@@ -417,10 +411,16 @@ namespace RegistroPelicula
 
         private void AgregarAutoresbutton_Click(object sender, EventArgs e)
         {
+            if (ActorescomboBox.Text.Length > 0)
+            {
+                ActoreslistBox.Items.Add(ActorescomboBox.Text);
 
-            ActoreslistBox.Items.Add(ActorescomboBox.Text);
-            
-            ActorescomboBox.Text = "";
+                ActorescomboBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Selecione un actor primero","Por Favor");
+            }
         }
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
