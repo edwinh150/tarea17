@@ -51,17 +51,17 @@ namespace RegistroPelicula
             PeliculaIdtextBox.Clear();
             TitulotextBox.Clear();
             DescripciontextBox.Clear();
-            AnocomboBox.Text = "";
+            AnocomboBox.SelectedIndex = 0;
             CalificaciontextBox.Clear();
             IMDBtextBox.Clear();
-            CategoriacomboBox.Text = "";
+            CategoriacomboBox.SelectedIndex = 0;
             RutatextBox.Clear();
             PortadapictureBox.ImageLocation = "";
-            GenerocomboBox.Text = "";
-            EstudiocomboBox.Text = "";
-            ActorescomboBox.Text = "";
-            ActoreslistBox.Text = "";
-            GenerolistBox.Text = "";
+            GenerocomboBox.SelectedIndex = 0;
+            EstudiocomboBox.SelectedIndex = 0;
+            ActorescomboBox.SelectedIndex = 0;
+            ActoreslistBox.Items.Clear();
+            GenerolistBox.Items.Clear();
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
